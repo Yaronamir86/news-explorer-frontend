@@ -1,0 +1,25 @@
+.about__wrapper {
+  display: flex;
+  margin-top: 131px;
+  width: 100%;
+}
+
+.about__avatar {
+  margin-left: 104px;
+}
+
+.about__header {
+  margin-left: 56px;
+  font-family: 'Roboto Slab';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 46px;
+}
+
+.about__paragraph {
+  margin-top: 24px;
+  max-width: 600px;
+  margin-left: 56px;
+  margin-right: 216px;
+}
