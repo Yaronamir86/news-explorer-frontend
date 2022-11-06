@@ -1,0 +1,24 @@
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 106px 30px 104px;
+}
+
+.footer__list{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__list-item{
+    margin: 0;
+    list-style: none;
+}
+
+.footer__link{
+    
+    text-decoration: none;
+}

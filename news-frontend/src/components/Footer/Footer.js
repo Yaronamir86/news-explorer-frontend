@@ -13,16 +13,25 @@ const footer = () => {
       <div className="footer__socials">
         <ul className="footer__list">
           <li className="footer__list-item">
-            <a href="#">Home</a>
+            <a href="#" className="footer__link">
+              Home
+            </a>
           </li>
-          <li className="footer__list-item"><a href="https://practicum.com">Practicum
-        </a></li>
-          <li className="footer__list-item"><a href="https://github.com">
-         <img src={Github} alt='Github-logo'/>
-        </a></li>
-          <li className="footer__list-item"><a href="https://facebook.com">
-         <img src={Facebook} alt='facebook-logo'/>
-        </a></li>
+          <li className="footer__list-item">
+            <a href="https://practicum.com" className="footer__link">
+              Practicum
+            </a>
+          </li>
+          <li className="footer__list-item">
+            <a href="https://github.com" className="footer__link">
+              <img src={Github} alt="Github-logo" />
+            </a>
+          </li>
+          <li className="footer__list-item">
+            <a href="https://facebook.com" className="footer__link">
+              <img src={Facebook} alt="facebook-logo" />
+            </a>
+          </li>
         </ul>
       </div>
     </footer>

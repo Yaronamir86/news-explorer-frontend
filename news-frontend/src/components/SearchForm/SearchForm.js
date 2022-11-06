@@ -10,7 +10,7 @@ const SearchForm = () => {
         placeholder="Enter topic"
         className="search__input"
       ></input>
-      <button class="search__button" type="submit">
+      <button className="search__button" type="submit">
         Search
       </button>
       </div>
