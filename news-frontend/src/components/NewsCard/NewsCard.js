@@ -4,16 +4,16 @@ import "./NewsCard.css";
 const card = ({card}) => {
   return (
     <li className="news-card-list__item">
-    <article className="card" key={card.id}>
+    <article className="news-card" key={card.id}>
       <div
-        className="card__image-container"
+        className="news-card__image-container"
         style={{ backgroundImage: `url(${card.image})` }}
       ></div>
-      <div className="card__text-container">
-        <p className="card__date">{card.date}</p>
-        <h2 className="card__title">{card.title}</h2>
-        <p className="card__text">{card.text}</p>
-        <p className="card__keywords">{card.keywords}</p>
+      <div className="news-card__text-container">
+        <p className="news-card__date">{card.date}</p>
+        <h2 className="news-card__title">{card.title}</h2>
+        <p className="news-card__text">{card.text}</p>
+        <p className="news-card__keywords">{card.keyword}</p>
       </div>
     </article>
     </li>
