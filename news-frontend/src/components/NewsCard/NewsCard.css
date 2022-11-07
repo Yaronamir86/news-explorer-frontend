@@ -1,0 +1,32 @@
+.card{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  row-gap: 0;
+  max-width: 400px;
+  position: relative;
+}
+
+.card__image-container{
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+  min-height: 272px;
+  max-height: 400px;
+}
+
+.card__text-container{
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-content: space-between;
+  padding: 20px 24px 24px;
+  margin-top: 0;
+  max-width: 100%;
+}

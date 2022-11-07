@@ -1,15 +1,16 @@
 import React from 'react';
-import Logo from '../../images/NewsExplorer.svg';
+import WhiteLogo from '../../images/NewsExplorerWhite.svg';
+import BlackLogo from '../../images/NewsExplorerBlack.svg';
 import './Navigation.css';
 
 
-const Navigation = () => {
+const Navigation = ({ isHome }) => {
   return (
-      <nav className="nav">
-      <img className="nav__logo" src={Logo} alt="news-logo" />
+      <nav className={`${!isHome ? 'nav' : 'nav nav_bg-white'}`} >
+      <img className="nav__logo" src={!isHome ? WhiteLogo : BlackLogo} alt="news-logo" />
         <div className="nav__container">
         <ul className="nav__list">
-          <li className="nav__list-item">
+          <li className="nav__list-item nav__list-item_active">
             Home
           </li>
           <li className="nav__list-item">

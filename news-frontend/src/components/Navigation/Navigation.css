@@ -2,9 +2,14 @@
   display: flex;
   flex-direction: row;
   margin: 0;
-  padding: 13px 104px 19px;
+  padding: 13px 104px 0px;
   justify-content: space-between;
   border-bottom: 1px solid;
+}
+
+.nav_bg-white{
+  color: black;
+  background-color: white;
 }
 
 .nav__list {
@@ -20,16 +25,21 @@
   font-family: Roboto;
   font-size: 18px;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 60px;
   letter-spacing: 0px;
   text-align: center;
 }
 
+.nav__list-item_active {
+    border-bottom: 3px solid white;
+}
+
 .nav__list-item:last-child{
     border: 1px solid white;
-    border-bottom-left-radius: 24px;
-    border-bottom-right-radius: 24px;
-    border-top-left-radius: 24px;
-    border-top-right-radius: 24px;
+   border-radius: 50px;
+   line-height: 24px;
+   height: 24px;
+   padding-top: 12px;
+   padding-bottom: 12px;
     width: 152px;
 }
