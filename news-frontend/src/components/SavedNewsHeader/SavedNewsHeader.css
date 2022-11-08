@@ -1,7 +1,12 @@
+.savedNewsHeader{
+    min-width:100%;
+}
+
 .savedNewsHeader__wrapper {
   padding: 44px 104px 56px 104px;
   background-color: white;
   color: black;
+  width: 100%;
 }
 
 .savedNewsHeader__page {
@@ -34,7 +39,7 @@
   text-align: left;
 }
 
-.savedNewsHeader__info-span {
+.savedNewsHeader__span {
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 700;

@@ -5,17 +5,19 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
+import Navigation from "../Navigation/Navigation";
 
 function App() {
   return (
     <div className="app">
-      <Header />
       <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Main />
+        <Header />
+        <Main />
         </Route>
         <Route path="/saved-news">
+          <Navigation/>
           <SavedNewsHeader/>
         </Route>
         <Route path="*">

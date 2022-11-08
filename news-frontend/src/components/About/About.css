@@ -1,6 +1,7 @@
 .about__wrapper {
   display: flex;
-  margin-top: 131px;
+  margin-top: 80px;
+  margin-bottom: 80px;
   width: 100%;
 }
 
@@ -9,7 +10,7 @@
 }
 
 .about__header {
-  margin-left: 56px;
+  margin: 51px 0 24px 56px;
   font-family: 'Roboto Slab';
 font-style: normal;
 font-weight: 400;
