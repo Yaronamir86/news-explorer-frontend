@@ -1,8 +1,25 @@
-import React from 'react'
+import React from "react";
 import closeButton from "../../images/close.svg";
-import './PopupWithForm.css';
+import "./PopupWithForm.css";
+import { useModal } from "../../contexts/modalContext";
 
 const PopupWithForm = (props) => {
+  const modalContext = useModal();
+
+  function handleEscClose(evt) {
+    if (evt.key === "Escape") {
+      modalContext.closeModal();
+    }
+  }
+
+  const handleRedirect = () => {
+    const goToPopup = props.name === "signin" ? "signup" : "signin";
+    modalContext.closeModal();
+    modalContext.openModal(goToPopup);
+  };
+
+  document.addEventListener("keydown", handleEscClose);
+
   return (
     <div
       className={`modal modal_type_${props.name} ${
@@ -14,7 +31,7 @@ const PopupWithForm = (props) => {
           className="modal__close-btn"
           type="button"
           aria-label="close"
-          onClick={props.onClose}
+          onClick={modalContext.closeModal}
         >
           <img
             className="modal__close-icon"
@@ -31,12 +48,19 @@ const PopupWithForm = (props) => {
         >
           <h2 className="form__title">{props.title}</h2>
           {props.children}
-          <button
-            className="modal__button modal__button_type_delete"
-            type="submit"
-          >
+          <button className="modal__button" type="submit">
             {props.buttonText}
           </button>
+          <p className="modal__redirect">
+            or{" "}
+            <button
+              className="modal__redirect-button"
+              type="button"
+              onClick={handleRedirect}
+            >
+              {props.redirect}
+            </button>
+          </p>
         </form>
       </div>
     </div>

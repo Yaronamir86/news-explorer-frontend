@@ -7,23 +7,17 @@ import Footer from "../Footer/Footer";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import Navigation from "../Navigation/Navigation";
 import LoginPopup from "../LoginPopup/LoginPopup";
+import RegisterPopup from "../RegisterPopup/RegisterPopup";
 
 
 function App() {
-  const [isLoginPopupOpen, setIsLoginPopupOpen] = React.useState(false);
 
-
-  const handleLoginClick = () => {
-    setIsLoginPopupOpen(true);
-    console.log('open!');
-  };
   return (
     <div className="app">
       <BrowserRouter>
       <Switch>
         <Route exact path="/">
-        <Header 
-        handleLoginClick={handleLoginClick}/>
+        <Header />
         <Main />
         </Route>
         <Route path="/saved-news">
@@ -36,9 +30,8 @@ function App() {
       </Switch>
       </BrowserRouter>
       <Footer />
-      <LoginPopup
-            isOpen={isLoginPopupOpen}
-            />
+      <LoginPopup/>
+      <RegisterPopup/>
     </div>
   );
 }

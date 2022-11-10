@@ -3,8 +3,15 @@ import WhiteLogo from "../../images/NewsExplorerWhite.svg";
 import BlackLogo from "../../images/NewsExplorerBlack.svg";
 import "./Navigation.css";
 import { NavLink } from "react-router-dom";
+import { useModal } from "../../contexts/modalContext";
 
-const Navigation = ({ isHome, onLoginClick }) => {
+const Navigation = ({ isHome }) => {
+  const { openModal } = useModal();
+
+  const handleModalOpen = () => {
+    openModal('signin');
+  }
+
   return (
     <nav className={`${!isHome ? "nav" : "nav nav_bg-white"}`}>
       <img
@@ -38,7 +45,7 @@ const Navigation = ({ isHome, onLoginClick }) => {
           <li className="nav__list-item">
             <button
               className="nav__button"
-              onClick={onLoginClick}
+              onClick={handleModalOpen}
               type="button"
             >
               Sign in
