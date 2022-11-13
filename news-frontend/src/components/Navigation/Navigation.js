@@ -25,7 +25,7 @@ const Navigation = ({ isHome }) => {
             <NavLink
               to="/"
               className={`${
-                isHome ? "nav__link nav__link_active" : "nav__link nav__link_active"
+                isHome ? "nav__link nav__link_active" : "nav__link nav__link_bg-white"
               }`}
             >
               Home
