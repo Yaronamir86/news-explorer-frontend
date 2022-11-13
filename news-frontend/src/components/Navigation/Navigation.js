@@ -13,10 +13,10 @@ const Navigation = ({ isHome }) => {
   }
 
   return (
-    <nav className={`${!isHome ? "nav" : "nav nav_bg-white"}`}>
+    <nav className={`${isHome ? "nav" : "nav nav_bg-white"}`}>
       <img
         className="nav__logo"
-        src={!isHome ? WhiteLogo : BlackLogo}
+        src={isHome ? WhiteLogo : BlackLogo}
         alt="news-logo"
       />
       <div className="nav__container">
@@ -25,7 +25,7 @@ const Navigation = ({ isHome }) => {
             <NavLink
               to="/"
               className={`${
-                isHome ? "nav__link_bg-white" : "nav__link nav__link_active"
+                isHome ? "nav__link nav__link_active" : "nav__link nav__link_active"
               }`}
             >
               Home
@@ -35,7 +35,7 @@ const Navigation = ({ isHome }) => {
             <NavLink
               to="/saved-news"
               className={`${
-                !isHome ? "nav__link " : "nav__link nav__link_active_bg-white"
+                isHome ? "nav__link " : "nav__link nav__link_active_bg-white"
               }`}
               // style={{ display: "none" }}
             >

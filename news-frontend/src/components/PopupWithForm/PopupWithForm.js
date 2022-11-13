@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import closeButton from "../../images/close.svg";
 import "./PopupWithForm.css";
 import { useModal } from "../../contexts/modalContext";
@@ -6,11 +7,24 @@ import { useModal } from "../../contexts/modalContext";
 const PopupWithForm = (props) => {
   const modalContext = useModal();
 
+  useEffect(() => {
+    const isOpen = props.isOpen;
+    if (!isOpen) return;
+
   function handleEscClose(evt) {
-    if (evt.key === "Escape") {
+    if (evt.key === 'Escape') {
       modalContext.closeModal();
+      console.log('closed')
     }
   }
+
+  document.addEventListener('keydown', handleEscClose);
+ 
+
+return () => {
+      document.removeEventListener('keydown', handleEscClose);  
+    };
+  },[props.isOpen, modalContext]);
 
   const handleRedirect = () => {
     const goToPopup = props.name === "signin" ? "signup" : "signin";
@@ -18,10 +32,8 @@ const PopupWithForm = (props) => {
     modalContext.openModal(goToPopup);
   };
 
-  document.addEventListener("keydown", handleEscClose);
-
   return (
-    <div
+    <div 
       className={`modal modal_type_${props.name} ${
         props.isOpen ? "modal_opened" : ""
       }`}

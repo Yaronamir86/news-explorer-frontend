@@ -5,9 +5,9 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
-import Navigation from "../Navigation/Navigation";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
+import InfoToolTip from "../InfoToolTip/InfoToolTip";
 
 
 function App() {
@@ -21,7 +21,6 @@ function App() {
         <Main />
         </Route>
         <Route path="/saved-news">
-          <Navigation/>
           <SavedNewsHeader/>
         </Route>
         <Route path="*">
@@ -32,6 +31,7 @@ function App() {
       <Footer />
       <LoginPopup/>
       <RegisterPopup/>
+     <InfoToolTip/>
     </div>
   );
 }
