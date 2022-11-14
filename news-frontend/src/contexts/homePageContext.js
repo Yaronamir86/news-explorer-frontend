@@ -5,12 +5,12 @@ const HomePageContext = createContext();
 
 const HomeContextProvider = ({ children }) => {
     const [isHome, setIsHome] = useState(true);
-    const location = useLocation();
+    const location = useLocation;
 
 
     useEffect(() => {
-        location.pathname !== '/' ? setIsHome(false) : setIsHome(true);
-    }, [location])
+        location.pathname === '/' ? setIsHome(true) : setIsHome(false);
+    },[location.pathname]);
 
     return (
         <HomePageContext.Provider value={isHome}>{children}</HomePageContext.Provider>

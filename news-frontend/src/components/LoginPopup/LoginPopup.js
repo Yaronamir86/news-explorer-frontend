@@ -1,10 +1,9 @@
-import React from 'react'
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
-import { useModal } from '../../contexts/modalContext';
-import '../../blocks/Form.css';
+import React from "react";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import { useModal } from "../../contexts/ModalContext";
+import "../../blocks/Form.css";
 
 const LoginPopup = () => {
-
   const modalContext = useModal();
 
   const [email, setEmail] = React.useState("");
@@ -12,7 +11,7 @@ const LoginPopup = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-  };
+  }
 
   return (
     <PopupWithForm
@@ -23,7 +22,6 @@ const LoginPopup = () => {
       isOpen={modalContext.modalState.signin}
       onClose={modalContext.modalState.signin}
       onSubmit={handleSubmit}
-
     >
       <fieldset className="form__fieldset">
         <h3 className="form__input-title">Email</h3>
@@ -37,7 +35,7 @@ const LoginPopup = () => {
           maxLength="40"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          autoComplete='true'
+          autoComplete="true"
           required
         />
         <span className="form__input-error name-input-error"></span>
@@ -52,7 +50,7 @@ const LoginPopup = () => {
           maxLength="200"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          autoComplete='false'
+          autoComplete="false"
           required
         />
         <span className="form__input-error about-me-input-error"></span>

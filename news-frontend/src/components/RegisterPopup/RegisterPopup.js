@@ -1,10 +1,9 @@
-import React from 'react'
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
-import { useModal } from '../../contexts/modalContext';
-import '../../blocks/Form.css';
+import React from "react";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import { useModal } from "../../contexts/ModalContext";
+import "../../blocks/Form.css";
 
 const RegisterPopup = () => {
-
   const modalContext = useModal();
 
   const [name, setName] = React.useState("");
@@ -13,7 +12,7 @@ const RegisterPopup = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-  };
+  }
 
   return (
     <PopupWithForm
@@ -24,10 +23,9 @@ const RegisterPopup = () => {
       isOpen={modalContext.modalState.signup}
       onClose={modalContext.modalState.signup}
       onSubmit={handleSubmit}
-
     >
       <fieldset className="form__fieldset">
-      <h3 className="form__input-title">Email</h3>
+        <h3 className="form__input-title">Email</h3>
         <input
           id="email-input"
           type="email"
