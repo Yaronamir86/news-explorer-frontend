@@ -26,7 +26,7 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-  color: #B6BCBF;
+  color: #b6bcbf;
   margin: 0;
 }
 
@@ -46,12 +46,12 @@
 
 .news-card__title {
   font-family: Roboto Slab;
-font-size: 26px;
-font-weight: 400;
-line-height: 30px;
-letter-spacing: 0px;
-text-align: left;
-margin: 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin: 0;
 }
 
 .news-card__text {
@@ -73,4 +73,74 @@ margin: 0;
   text-align: left;
   color: #b6bcbf;
   margin: 0;
+}
+
+.news-card__button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  justify-items: center;
+  margin: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.news-card__button-save {
+  background-image: url("../../images/marker-grey.svg");
+}
+
+.news-card__button-save:hover {
+  background-image: url("../../images/Rectangle-8.svg");
+}
+
+.news-card__button-save:active{
+  background-image: url("../../images/Rectangle_blue.svg");
+}
+
+.news-card__button-trash {
+  background-image: url("../../images/trash_grey.svg");
+}
+
+.news-card__button-trash:hover {
+  background-image: url("../../images/trash_black.svg");
+}
+
+.news-card__tooltip {
+  position: absolute;
+  top: 24px;
+  right: 70px;
+  padding: 8px 22px;
+  margin: 0;
+  border-radius: 8px;
+  background-color: white;
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+.news-card__keyword{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  padding: 8px 22px;
+  margin: 0;
+  border-radius: 8px;
+  background-color: white;
+  font-family: 'Roboto';
+font-size: 14px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: center;
+
 }

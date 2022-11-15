@@ -9,8 +9,8 @@ const HomeContextProvider = ({ children }) => {
 
 
     useEffect(() => {
-        location.pathname === '/' ? setIsHome(true) : setIsHome(false);
-    },[location.pathname]);
+        location.pathname !== '/saved-news' ? setIsHome(true) : setIsHome(false);
+    },[location.pathname, location]);
 
     return (
         <HomePageContext.Provider value={isHome}>{children}</HomePageContext.Provider>

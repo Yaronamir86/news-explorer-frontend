@@ -18,8 +18,8 @@ function App() {
       <BrowserRouter>
       <Switch>
         <Route exact path="/">
-        <Header />
-        <Main />
+          <Header />
+          <Main />
         </Route>
         <Route path="/saved-news">
           <SavedNewsHeader/>
