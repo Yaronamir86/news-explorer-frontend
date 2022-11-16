@@ -12,7 +12,7 @@ const NewsCard = ({ card }) => {
   const { openModal } = useModal();
 
   const handleMouseOn = () => {
-    isLoggedIn && setShowToolTip(true);
+    !isLoggedIn && setShowToolTip(true);
   };
   const handleMouseOut = () => {
     setShowToolTip(false);

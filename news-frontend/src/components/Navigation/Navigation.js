@@ -10,11 +10,12 @@ import { useHomePage } from "../../contexts/HomePageContext";
 const Navigation = () => {
   const { openModal } = useModal();
   const { isHome } = useHomePage();
-  const { isLoggedIn, user } = useLoggedIn();
+  const { isLoggedIn, user, handleLogOut } = useLoggedIn();
 
-  const handleModalOpen = () => {
-    openModal("signin");
-  };
+
+  const handleNavButtonClick = () => {
+    !isLoggedIn ? openModal("signin") : handleLogOut();
+  }
 
   return (
     <nav className={`${isHome ? "nav" : "nav nav_bg-white"}`}>
@@ -61,7 +62,7 @@ const Navigation = () => {
               className={`${
                 isHome ? "nav__button" : "nav__button nav__button_bg-white"
               }`}
-              onClick={handleModalOpen}
+              onClick={handleNavButtonClick}
               type="button"
             >
               <span className="nav__button-text">
