@@ -12,7 +12,7 @@ const NewsCard = ({ card }) => {
   const { openModal } = useModal();
 
   const handleMouseOn = () => {
-    !isLoggedIn && setShowToolTip(true);
+    isLoggedIn && setShowToolTip(true);
   };
   const handleMouseOut = () => {
     setShowToolTip(false);
@@ -38,7 +38,7 @@ const NewsCard = ({ card }) => {
           <p className="news-card__keywords">{card.source}</p>
         </div>
         {showToolTip && (
-          <button className="news-card__tootltip">
+          <button className="news-card__tooltip">
             Sign in to save articles
           </button>
         )}

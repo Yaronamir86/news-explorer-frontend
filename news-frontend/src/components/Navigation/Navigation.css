@@ -42,7 +42,7 @@
   height: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-  width: 152px;
+  width: 112px;
 }
 
 .nav__list-item_bg-white:last-child {
@@ -90,4 +90,16 @@ color:black
   color: black;
 }
 
+.nav__button-icon{
+  background-image: url('../../images/log-out_icon.svg');
+  width: 17px;
+  height: 17px;
+  padding-left: 45px;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.nav__button-icon_bg-white {
+  background-image: url('../../images/log-out_sign-bg-white.svg');
+}
 

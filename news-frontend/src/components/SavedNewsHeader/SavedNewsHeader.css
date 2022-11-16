@@ -6,7 +6,7 @@
   padding: 44px 104px 56px 104px;
   background-color: white;
   color: black;
-  width: 100%;
+  max-width: 100%;
 }
 
 .savedNewsHeader__page {

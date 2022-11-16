@@ -5,16 +5,19 @@ import App from "./components/App/App";
 import ModalContextProvider from "./contexts/ModalContext";
 import HomeContextProvider from "./contexts/HomePageContext";
 import LoggedInContextProvider from "./contexts/LoggedInContext";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LoggedInContextProvider>
-      <ModalContextProvider>
-        <HomeContextProvider>
+    <BrowserRouter>
+    <HomeContextProvider>
+      <LoggedInContextProvider>
+        <ModalContextProvider>
           <App />
-        </HomeContextProvider>
-      </ModalContextProvider>
-    </LoggedInContextProvider>
+        </ModalContextProvider>
+      </LoggedInContextProvider>
+    </HomeContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

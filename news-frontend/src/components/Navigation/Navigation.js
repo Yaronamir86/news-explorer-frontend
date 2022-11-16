@@ -4,9 +4,13 @@ import BlackLogo from "../../images/NewsExplorerBlack.svg";
 import "./Navigation.css";
 import { NavLink } from "react-router-dom";
 import { useModal } from "../../contexts/ModalContext";
+import { useLoggedIn } from "../../contexts/LoggedInContext";
+import { useHomePage } from "../../contexts/HomePageContext";
 
-const Navigation = ({ isHome }) => {
+const Navigation = () => {
   const { openModal } = useModal();
+  const { isHome } = useHomePage();
+  const { isLoggedIn, user } = useLoggedIn();
 
   const handleModalOpen = () => {
     openModal("signin");
@@ -35,14 +39,16 @@ const Navigation = ({ isHome }) => {
             </NavLink>
           </li>
           <li className="nav__list-item">
-            <NavLink
-              to="/saved-news"
-              className={`${
-                isHome ? "nav__link" : "nav__link nav__link_active_bg-white"
-              }`}
-            >
-              Saved articles
-            </NavLink>
+            {isLoggedIn && (
+              <NavLink
+                to="/saved-news"
+                className={`${
+                  isHome ? "nav__link" : "nav__link nav__link_active_bg-white"
+                }`}
+              >
+                Saved articles
+              </NavLink>
+            )}
           </li>
           <li
             className={`${
@@ -58,7 +64,12 @@ const Navigation = ({ isHome }) => {
               onClick={handleModalOpen}
               type="button"
             >
-              Sign in
+              <span className="nav__button-text">
+                {isLoggedIn ? user.firstName : "sign in"}
+              </span>
+              {isLoggedIn && <span className={`${
+                isHome ? "nav__button-icon" : "nav__button-icon nav__button-icon_bg-white"
+              }`}></span>}
             </button>
           </li>
         </ul>

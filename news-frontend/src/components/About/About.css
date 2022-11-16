@@ -1,26 +1,30 @@
 .about__wrapper {
   display: flex;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  width: 100%;
+  max-width: 100%;
+  padding: 80px 216px 80px 104px;
+  
+}
+
+.about__content{
+  max-width: 50%;
 }
 
 .about__avatar {
-  margin-left: 104px;
+  max-width: 50%;
 }
 
 .about__header {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
   margin: 51px 0 24px 56px;
-  font-family: 'Roboto Slab';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 46px;
 }
 
 .about__paragraph {
   margin-top: 24px;
-  max-width: 600px;
+  
   margin-left: 56px;
-  margin-right: 216px;
+  /* margin-right: 216px;*/
 }

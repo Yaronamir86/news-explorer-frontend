@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -15,7 +15,6 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
       <Switch>
         <Route exact path="/">
           <Header />
@@ -28,7 +27,6 @@ function App() {
           <Redirect to="/" />
         </Route>
       </Switch>
-      </BrowserRouter>
       <Footer />
       <LoginPopup/>
       <RegisterPopup/>

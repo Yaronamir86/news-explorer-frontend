@@ -59,7 +59,7 @@ const PopupWithForm = (props) => {
         >
           <h2 className="form__title">{props.title}</h2>
           {props.children}
-          <button className="modal__button" type="submit">
+          <button className="modal__button" type="submit" onClick={props.submit}>
             {props.buttonText}
           </button>
           <p className="modal__redirect">

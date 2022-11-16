@@ -6,12 +6,19 @@ import "../../blocks/Form.css";
 const RegisterPopup = () => {
   const modalContext = useModal();
 
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [userData, setUserData] = React.useState({});
+
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    setUserData({ ...userData, [name]: value });
+  };
+  
+ 
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(userData);
+    modalContext.closeModal(RegisterPopup);
   }
 
   return (
@@ -34,8 +41,8 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={userData.email || ''}
+          onChange={handleChange}
           required
         />
         <span className="form__input-error name-input-error"></span>
@@ -48,8 +55,8 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="200"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={userData.password || ''}
+          onChange={handleChange}
           required
         />
         <span className="form__input-error about-me-input-error"></span>
@@ -62,8 +69,8 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={userData.name || ''}
+          onChange={handleChange}
           required
         />
         <span className="form__input-error name-input-error"></span>

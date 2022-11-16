@@ -1,16 +1,17 @@
-import React, { useContext, useState, createContext, useEffect } from "react";
+import { useContext, useState, createContext, useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 
 const HomePageContext = createContext();
 
 const HomeContextProvider = ({ children }) => {
     const [isHome, setIsHome] = useState(true);
-    const location = useLocation;
+    const location = useLocation();
 
 
     useEffect(() => {
         location.pathname !== '/saved-news' ? setIsHome(true) : setIsHome(false);
-    },[location.pathname, location]);
+    },[ location]);
 
     return (
         <HomePageContext.Provider value={isHome}>{children}</HomePageContext.Provider>

@@ -6,11 +6,18 @@ import "../../blocks/Form.css";
 const LoginPopup = () => {
   const modalContext = useModal();
 
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [userData, setUserData] = React.useState({});
+
+  const handleChange = (evt) => {
+    const { name, value } = evt.target
+    setUserData({ ...userData, [name]: value })
+  }
+  
 
   function handleSubmit(e) {
     e.preventDefault();
+    modalContext.closeModal(LoginPopup);
+    console.log(userData);
   }
 
   return (
@@ -33,8 +40,8 @@ const LoginPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={userData.email || ''}
+          onChange={handleChange}
           autoComplete="true"
           required
         />
@@ -48,8 +55,8 @@ const LoginPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="200"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={userData.password || ''}
+          onChange={handleChange}
           autoComplete="false"
           required
         />
