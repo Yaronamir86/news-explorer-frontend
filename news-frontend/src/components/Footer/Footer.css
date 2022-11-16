@@ -22,3 +22,10 @@
     
     text-decoration: none;
 }
+
+@media screen and (max-width:768px) {
+    .footer-container{
+       
+        padding: 24px 40px 18px 40px;
+    } 
+}
