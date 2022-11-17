@@ -5,16 +5,18 @@
   justify-content: center;
   margin: auto;
   flex-direction: row;
+  
 }
 
 .search__wrapper {
-  width: 99%;
+  max-width:100%;
   background-color: white;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0;
   flex-direction: row;
   border-radius: 50px;
   border: none;
+  position: relative;
 }
 .search__input {
   font-family: "Roboto";
@@ -26,8 +28,9 @@
   padding: 20px 20px 20px 40px;
   border-radius: 50px;
   border: none;
-  width: 60%;
+  flex-grow:2;
   color: #1A1B22;
+  margin: auto;
 }
 
 .search__button {
@@ -42,5 +45,18 @@
   padding: 20px 50px;
   border-radius: 50px;
   border: none;
-  width: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .search__form {
+    width: 448px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    justify-content: center;
+    margin: auto;
+    flex-direction: row;
+  }
 }

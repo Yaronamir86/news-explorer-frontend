@@ -38,3 +38,27 @@
   margin: 0;
   margin-top: 32px;
 }
+
+@media screen and (max-width: 768px) {
+
+  .header__container{
+    padding-top: 38px;
+    align-items: flex-start;
+  }
+
+  .header__title {
+    max-width: 385px;
+    font-family: "Roboto Slab";
+    font-size: 36px;
+    line-height: 40px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .header__paragraph {
+    max-width: 452px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
+}
