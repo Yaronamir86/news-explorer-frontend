@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect } from "react";
-import closeButton from "../../images/close.svg";
 import "./PopupWithForm.css";
 import { useModal } from "../../contexts/ModalContext";
 
@@ -43,13 +42,7 @@ const PopupWithForm = (props) => {
           type="button"
           aria-label="close"
           onClick={modalContext.closeModal}
-        >
-          <img
-            className="modal__close-icon"
-            src={closeButton}
-            alt="closing icon"
-          />
-        </button>
+        />
         <form
           action="submit"
           className="form"

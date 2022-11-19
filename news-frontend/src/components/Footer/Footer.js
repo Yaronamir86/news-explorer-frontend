@@ -10,7 +10,7 @@ const footer = () => {
       <div className="footer__copyrights">
         © 2022, Powered by Yaron amir.
       </div>
-<div class="footer__links">
+<div className="footer__links">
       <ul className="footer__list">
         <li className="footer__list-item">
           <a href="#" className="footer__link">

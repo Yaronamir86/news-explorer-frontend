@@ -24,6 +24,7 @@ const NewsCard = ({ card }) => {
     !isHome && console.log("delete card");
   };
 
+
   return (
     <li className="news-card-list__item">
       <article className="news-card" key={card.id}>

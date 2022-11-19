@@ -106,7 +106,7 @@
   background-image: url("../../images/Rectangle-8.svg");
 }
 
-.news-card__button-save_active {
+.news-card__button-save_active:checked {
   background-image: url("../../images/icon_active.svg");
 }
 

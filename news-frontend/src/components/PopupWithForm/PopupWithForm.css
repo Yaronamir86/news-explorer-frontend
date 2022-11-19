@@ -113,8 +113,12 @@ text-align: center;
   border: none;
   align-self: center;
   position: absolute;
+  width: 36px;
+  height: 36px;
   right: -44px;
   top: -44px;
+  background-image: url('../../images/close.svg');
+  color: white;
 }
 
 .modal__close-btn:hover {
@@ -124,9 +128,9 @@ text-align: center;
 
 
 
-.modal__close-icon {
+/*.modal__close-icon {
   width: 36px;
-}
+}*/
 
 .modal__redirect {
   align-self: center;

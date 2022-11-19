@@ -17,6 +17,11 @@ const Navigation = () => {
     !isLoggedIn ? openModal("signin") : handleLogOut();
   }
 
+  const handleHamburgerClick = () => {
+    openModal("mobile")
+    console.log("opend!")
+  }
+
   return (
     <nav className={`${isHome ? "nav" : "nav nav_bg-white"}`}>
       <img
@@ -75,6 +80,11 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
+      <button className="nav__hamburger"
+      onClick={handleHamburgerClick}
+      type="button"
+      aria-label="mobile-menu"
+      ></button>
     </nav>
   );
 };

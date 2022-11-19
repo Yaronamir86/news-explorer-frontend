@@ -8,6 +8,7 @@ import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import InfoToolTip from "../InfoToolTip/InfoToolTip";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 
 
@@ -31,6 +32,7 @@ function App() {
       <LoginPopup/>
       <RegisterPopup/>
      <InfoToolTip/>
+     <MobileMenu/>
     </div>
   );
 }

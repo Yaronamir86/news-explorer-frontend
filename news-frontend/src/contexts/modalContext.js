@@ -8,6 +8,7 @@ const ModalProvider = ({ children }) => {
     signIn: false,
     signUp: false,
     infoToolTip: false,
+    mobile: false,
   });
 
   const openModal = (modalName) => {
