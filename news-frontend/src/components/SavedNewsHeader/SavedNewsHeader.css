@@ -1,5 +1,5 @@
-.savedNewsHeader{
-    min-width:100%;
+.savedNewsHeader {
+  min-width: 100%;
 }
 
 .savedNewsHeader__wrapper {
@@ -48,4 +48,30 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .savedNewsHeader__wrapper {
+    padding: 24px 40px 32px;
+    background-color: white;
+    color: black;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .savedNewsHeader__wrapper {
+    padding: 8px 16px 32px;
+    background-color: white;
+    color: black;
+    max-width: 100%;
+  }
+
+  .savedNewsHeader__title {
+    padding-top: 16px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  
 }

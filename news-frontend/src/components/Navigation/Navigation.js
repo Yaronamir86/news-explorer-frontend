@@ -80,7 +80,7 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
-      <button className="nav__hamburger"
+      <button className={`${isHome ? "nav__hamburger" : "nav__hamburger nav__hamburger_bg-white"}`}
       onClick={handleHamburgerClick}
       type="button"
       aria-label="mobile-menu"

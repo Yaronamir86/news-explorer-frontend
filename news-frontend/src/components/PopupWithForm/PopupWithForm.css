@@ -127,11 +127,6 @@ text-align: center;
 }
 
 
-
-/*.modal__close-icon {
-  width: 36px;
-}*/
-
 .modal__redirect {
   align-self: center;
 }
@@ -156,13 +151,32 @@ text-align: center;
 }
 
 @media screen and (max-width: 320px) {
-  
-  .modal__close-btn {
-    top: -31px;
+
+  .modal {
+    background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png);
+    background-repeat: no-repeat;
   }
 
-  .modal__close-icon {
-    width: 18px;
+  .modal__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background-color: transparent;
+    color: #fff;
+    gap: 10px;
+    width: 100%;
+    height: 560px;
+    margin-top: 52px;
+    border-radius: 10px;
   }
+  
+  .modal__close-btn {
+    top: -35px;
+    right: 10px;
+    background-image: url('../../images/mobile-close.svg');
+    background-repeat: no-repeat;
+    width: 24px;
+  }
+
 }
 

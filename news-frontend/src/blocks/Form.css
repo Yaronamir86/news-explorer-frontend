@@ -98,8 +98,9 @@
 
 @media screen and (max-width: 320px) {
   .form {
-    max-width: 282px;
-    box-sizing: border-box;
+   width: 100%;
+   max-width: none;
+   border-radius: 10px;
   }
 
   .form__title {
@@ -109,6 +110,6 @@
   }
 
   .form__fieldset {
-    padding: 77px 22px 25px 22px;
+    padding: 18px 16px 34px 16px;
   }
 }

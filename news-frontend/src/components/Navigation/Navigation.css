@@ -167,6 +167,7 @@
 
   .nav__logo {
     width: 117px;
+    height: 24px;
     padding: 16px 0;
   }
 
@@ -180,12 +181,17 @@
     background-color: transparent;
     background-size:16px 16px;
     background-repeat: no-repeat;
-   margin: 16px;
-   padding: 6px;
+    background-position: center;
+   margin: 2px;
+   padding: 10px;
     border: none;
     min-width: 10px;
    justify-content: center;
    cursor: pointer;
     
+  }
+
+  .nav__hamburger_bg-white {
+    background-image: url('../../images/mobile-icon-black.svg')
   }
 }

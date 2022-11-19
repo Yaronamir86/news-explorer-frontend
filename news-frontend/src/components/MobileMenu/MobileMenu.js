@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./MobileMenu.css";
 import WhiteLogo from "../../images/NewsExplorerWhite.svg";
 import BlackLogo from "../../images/NewsExplorerBlack.svg";
@@ -9,13 +9,38 @@ import { useHomePage } from "../../contexts/HomePageContext";
 
 const MobileMenu = () => {
     const { isHome } = useHomePage();
-    const{ closeModal} = useModal();
-    const { isLoggedIn, user, } = useLoggedIn();
+    const{ closeModal, openModal, modalState} = useModal();
+    const { isLoggedIn, user, handleLogOut } = useLoggedIn();
+    const { mobile } = modalState;
+
+    const handleMobileButtonClick = () => {
+        !isLoggedIn ? openModal("signin") : handleLogOut();
+        
+    }
+
+    useEffect(() => {
+       if(!mobile) return;
+       
+    function handleEscClose(evt) {
+        if (evt.key === "Escape") {
+          closeModal();
+          console.log("closed");
+        }
+      }
+  
+      document.addEventListener("keydown", handleEscClose);
+  
+      return () => {
+        document.removeEventListener("keydown", handleEscClose);
+      };
+    }, [mobile, closeModal]);
+    
 
   
   return (
-    <div className="mobile mobile_opened">
-        <div className="mobile__container">
+    <div className={`${ mobile ? "mobile mobile_opened" : "mobile"}`}>
+        <div className={`${ isHome
+         ? "mobile__container" :"mobile__container mobile__container_bg-white"}`}>
             <div className="mobile__header">
             <img
         className="mobile__logo"
@@ -23,7 +48,7 @@ const MobileMenu = () => {
         alt="news-logo"
       />
       <button
-          className="mobile__close-btn"
+          className={`${isHome ? "mobile__close-btn" : "mobile__close-btn mobile__close-btn_bg-white"}`}
           type="button"
           aria-label="close"
           onClick={closeModal}
@@ -37,7 +62,7 @@ const MobileMenu = () => {
               to="/"
               className={`${
                 isHome
-                  ? "mobile__link mobile__link_active"
+                  ? "mobile__link"
                   : "mobile__link mobile__link_bg-white"
               }`}
             >
@@ -49,7 +74,7 @@ const MobileMenu = () => {
               <NavLink
                 to="/saved-news"
                 className={`${
-                  isHome ? "mobile__link" : "mobile__link mobile__link_active_bg-white"
+                  isHome ? "mobile__link" : "mobile__link mobile__link_bg-white"
                 }`}
               >
                 Saved articles
@@ -68,6 +93,7 @@ const MobileMenu = () => {
                 isHome ? "mobile__button" : "mobile__button mobile__button_bg-white"
               }`}
               type="button"
+              onClick={handleMobileButtonClick}
             >
               <span className="mobile__button-text">
                 {isLoggedIn ? user.firstName : "sign in"}

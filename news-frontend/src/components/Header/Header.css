@@ -74,6 +74,7 @@
   .header__container{
     padding-top: 30px;
     align-content: center;
+    margin-left: 19px;
   }
 
   .header__title {
