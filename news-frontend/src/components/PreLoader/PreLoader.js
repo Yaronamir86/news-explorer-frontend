@@ -3,7 +3,10 @@ import "./PreLoader.css";
 
 const PreLoader = () => {
   return (
-    <div>PreLoader</div>
+    <div className='preloader__container'>
+      <i className= 'preloader__circle'></i>
+      <p className= 'preloader__paragraph'>Searching for news...</p>
+    </div>
   )
 }
 

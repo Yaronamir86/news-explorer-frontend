@@ -14,7 +14,6 @@ const NewsCardList = () => {
           return <NewsCard card={card} key={card.id}/>;
         })}
       </ul>
-      <button className="news-card-list__button">Show more</button>
       </div>
   );
 };

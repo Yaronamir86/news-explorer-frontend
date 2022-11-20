@@ -28,7 +28,7 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: grid;
-  grid-template-rows: 30px minmax(88px, 1fr) minmax(160px, auto) 20px;
+  grid-template-rows: 30px minmax(88px, 1fr) minmax(150px, auto) 30px;
   gap: 12px;
   padding: 20px 24px 24px;
   margin: 0;

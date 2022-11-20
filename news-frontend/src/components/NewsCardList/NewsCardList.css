@@ -1,6 +1,6 @@
 .news-card-list__container {
   background-color: #f5f6f7;
-  padding: 80px 0;
+  padding:0;
   max-width: 100%;
   margin: 0 auto;
   display: flex;
@@ -31,20 +31,7 @@
   height: 100%;
 }
 
-.news-card-list__button {
-  margin: auto;
-  display: flex;
-  justify-self: center;
-  padding: 20px 98px;
-  border-radius: 80px;
-  background-color: white;
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  text-align: center;
-  border: none;
-}
+
 
 .news-card-list__button:hover {
   cursor: pointer;
@@ -53,11 +40,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1220px) {
-  .news-card-list__container {
-    padding-bottom: 40px;
-    padding-top: 0;
-  }
-
+ 
   .news-card-list__list {
     margin: 0 40px;
     padding: 32px 0 32px 0;
@@ -89,6 +72,10 @@
     gap: 16px;
     margin: 0 16px;
     padding: 15px 0 15px 0;
+  }
+
+  .news-card-list__container{
+    padding: 0;
   }
   .news-card-list__title {
     font-size: 30px;

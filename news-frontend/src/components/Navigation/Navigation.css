@@ -44,18 +44,12 @@
   height: 24px;
   padding-top: 12px;
   padding-bottom: 12px;
-  width: 112px;
+  width: 152px;
 }
 
 .nav__list-item_bg-white:last-child {
   border: 1px solid #d1d2d6;
   color: black;
-  border-radius: 50px;
-  line-height: 24px;
-  height: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  width: 152px;
 }
 
 .nav__link {

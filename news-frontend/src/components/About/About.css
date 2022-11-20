@@ -80,7 +80,7 @@
 
 @media screen and (max-width: 320px) {
   .about__wrapper {
-    padding: 32px 0 128px 0;
+    padding: 32px 0 18px 0;
     flex-direction: column;
   }
 
