@@ -45,7 +45,7 @@ const LoginPopup = () => {
           autoComplete="true"
           required
         />
-        <span className="form__input-error name-input-error"></span>
+        <span className="form__input-error email-input-error"></span>
         <h3 className="form__input-title">Password</h3>
         <input
           id="password-input_type-signin"
@@ -60,7 +60,8 @@ const LoginPopup = () => {
           autoComplete="false"
           required
         />
-        <span className="form__input-error about-me-input-error"></span>
+        <span className="form__input-error password-input-error"></span>
+        <span className="form__input-error form__input-error_type-general"></span>
       </fieldset>
     </PopupWithForm>
   );

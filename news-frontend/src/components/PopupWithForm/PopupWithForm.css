@@ -101,12 +101,13 @@ text-align: center;
   line-height: 50px;
   border: none;
   border-radius: 100px;
+  transition: all 0.4s;
 }
 
-.modal__button:hover{
-  background: rgba(0, 0, 0, 0.8);
+/*.modal__button:hover{
+  background: #2F71E5;;
   cursor: pointer;
-}
+}*/
 
 .modal__close-btn {
   background: none;

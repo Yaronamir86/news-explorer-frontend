@@ -45,7 +45,7 @@ const RegisterPopup = () => {
           onChange={handleChange}
           required
         />
-        <span className="form__input-error name-input-error"></span>
+        <span className="form__input-error email-input-error"></span>
         <h3 className="form__input-title">Password</h3>
         <input
           id="password-input"
@@ -59,7 +59,7 @@ const RegisterPopup = () => {
           onChange={handleChange}
           required
         />
-        <span className="form__input-error about-me-input-error"></span>
+        <span className="form__input-error password-input-error"></span>
         <h3 className="form__input-title">Username</h3>
         <input
           id="userName-input"
@@ -74,6 +74,7 @@ const RegisterPopup = () => {
           required
         />
         <span className="form__input-error name-input-error"></span>
+        <span className="form__input-error form__input-error_type-general"></span>
       </fieldset>
     </PopupWithForm>
   );
