@@ -28,7 +28,7 @@
 
 .nav__list-item {
   list-style-type: none;
-  font-family: "Roboto";
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0px;
@@ -99,7 +99,7 @@
   background-image: url("../../images/log-out_sign-bg-white.svg");
 }
 
-.nav__hamburger{
+.nav__hamburger {
   display: none;
 }
 
@@ -156,7 +156,7 @@
     display: flex;
     flex-direction: row;
     margin: 0;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 
   .nav__logo {
@@ -169,23 +169,22 @@
     display: none;
   }
 
-  .nav__hamburger{
+  .nav__hamburger {
     display: block;
-    background-image: url('../../images/mobile-icon-white.svg');
+    background-image: url("../../images/mobile-icon-white.svg");
     background-color: transparent;
-    background-size:16px 16px;
+    background-size: 16px 16px;
     background-repeat: no-repeat;
     background-position: center;
-   margin: 2px;
-   padding: 10px;
+    margin: 2px;
+    padding: 10px;
     border: none;
     min-width: 10px;
-   justify-content: center;
-   cursor: pointer;
-    
+    justify-content: center;
+    cursor: pointer;
   }
 
   .nav__hamburger_bg-white {
-    background-image: url('../../images/mobile-icon-black.svg')
+    background-image: url("../../images/mobile-icon-black.svg");
   }
 }

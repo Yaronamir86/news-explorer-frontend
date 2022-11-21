@@ -108,9 +108,9 @@
 
 @media screen and (max-width: 320px) {
   .form {
-   width: 100%;
-   max-width: none;
-   border-radius: 10px;
+    width: 100%;
+    max-width: none;
+    border-radius: 10px;
   }
 
   .form__title {

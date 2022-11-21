@@ -10,30 +10,27 @@ import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import InfoToolTip from "../InfoToolTip/InfoToolTip";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
-
-
 function App() {
-
   return (
     <div className="app">
       <Switch>
         <Route exact path="/">
           <Header />
-          <InfoToolTip/>
+          <InfoToolTip />
           <Main />
         </Route>
         <Route path="/saved-news">
-          <SavedNewsHeader/>
+          <SavedNewsHeader />
         </Route>
         <Route path="*">
           <Redirect to="/" />
         </Route>
       </Switch>
       <Footer />
-      <LoginPopup/>
-      <RegisterPopup/>
-     {/*<InfoToolTip/>*/}
-     <MobileMenu/>
+      <LoginPopup />
+      <RegisterPopup />
+      {/*<InfoToolTip/>*/}
+      <MobileMenu />
     </div>
   );
 }

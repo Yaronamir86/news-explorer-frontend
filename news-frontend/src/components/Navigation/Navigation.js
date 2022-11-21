@@ -12,15 +12,14 @@ const Navigation = () => {
   const { isHome } = useHomePage();
   const { isLoggedIn, user, handleLogOut } = useLoggedIn();
 
-
   const handleNavButtonClick = () => {
     !isLoggedIn ? openModal("signin") : handleLogOut();
-  }
+  };
 
   const handleHamburgerClick = () => {
-    openModal("mobile")
-    console.log("opend!")
-  }
+    openModal("mobile");
+    console.log("opend!");
+  };
 
   return (
     <nav className={`${isHome ? "nav" : "nav nav_bg-white"}`}>
@@ -73,17 +72,26 @@ const Navigation = () => {
               <span className="nav__button-text">
                 {isLoggedIn ? user.firstName : "sign in"}
               </span>
-              {isLoggedIn && <span className={`${
-                isHome ? "nav__button-icon" : "nav__button-icon nav__button-icon_bg-white"
-              }`}></span>}
+              {isLoggedIn && (
+                <span
+                  className={`${
+                    isHome
+                      ? "nav__button-icon"
+                      : "nav__button-icon nav__button-icon_bg-white"
+                  }`}
+                ></span>
+              )}
             </button>
           </li>
         </ul>
       </div>
-      <button className={`${isHome ? "nav__hamburger" : "nav__hamburger nav__hamburger_bg-white"}`}
-      onClick={handleHamburgerClick}
-      type="button"
-      aria-label="mobile-menu"
+      <button
+        className={`${
+          isHome ? "nav__hamburger" : "nav__hamburger nav__hamburger_bg-white"
+        }`}
+        onClick={handleHamburgerClick}
+        type="button"
+        aria-label="mobile-menu"
       ></button>
     </nav>
   );

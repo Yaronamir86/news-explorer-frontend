@@ -18,7 +18,7 @@
   position: relative;
 }
 .search__input {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -34,7 +34,7 @@
 
 .search__button {
   background-color: #2f71e5;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -52,11 +52,11 @@
 }
 
 .search__button:hover {
- background-color:#347EFF ; 
+  background-color: #347eff;
 }
 
 .search__button:active {
-  background-color:#2A65CC ; 
+  background-color: #2a65cc;
 }
 
 @media screen and (max-width: 768px) {
@@ -88,7 +88,7 @@
     border-radius: 50px;
     border: none;
     position: relative;
-    width:100%
+    width: 100%;
   }
 
   .search__input {
@@ -100,7 +100,6 @@
     color: #1a1b22;
     margin: auto;
   }
-
 }
 
 @media screen and (max-width: 320px) {
@@ -134,5 +133,4 @@
     color: #1a1b22;
     margin: auto;
   }
-
 }

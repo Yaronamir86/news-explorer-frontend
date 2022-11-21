@@ -38,7 +38,7 @@
 }
 
 .news-card__date {
-  font-family:'Roboto-slab', Arial, Helvetica, sans-serif;
+  font-family: "Roboto-slab", Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -49,7 +49,7 @@
 }
 
 .news-card__title {
-  font-family: 'Roboto-slab', Arial, Helvetica, sans-serif;
+  font-family: "Roboto-slab", Arial, Helvetica, sans-serif;
   font-size: 26px;
   font-weight: 400;
   line-height: 30px;
@@ -59,7 +59,7 @@
 }
 
 .news-card__text {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 22px;
@@ -70,18 +70,19 @@
 }
 
 .news-card__source {
-  font-family: 'Roboto-slab', Arial, Helvetica, sans-serif;
+  font-family: "Roboto-slab", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.4px;
   text-align: left;
   color: #b6bcbf;
   margin: 0;
   text-overflow: ellipsis;
-  display:inline;
-  
+  overflow: hidden;
+  max-width: 100%;
+  grid-row: 4/-1;
 }
 
 .news-card__button {
@@ -134,7 +135,7 @@
   margin: 0;
   border-radius: 8px;
   background-color: white;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
@@ -150,7 +151,7 @@
   margin: 0;
   border-radius: 8px;
   background-color: white;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
@@ -164,8 +165,8 @@
 
   .news-card__text-container {
     padding: 16px;
-    min-height: 275px;
-    grid-template-rows: 20px minmax(60px, auto) minmax(125px, auto) 20px;
+    min-height: 295px;
+    grid-template-rows: 20px minmax(94px, auto) minmax(132px, auto) 20px;
     gap: 10px;
   }
 
@@ -200,8 +201,7 @@
   .news-card__text-container {
     padding: 16px;
     height: 270px;
-    grid-template-rows: 24px minmax(72px, auto) minmax(88px, auto) 20px;
-    
+    grid-template-rows: 24px minmax(84px, auto) minmax(110, auto) 20px;
     text-overflow: ellipsis;
   }
 
@@ -231,14 +231,12 @@
   }
 }
 
-@media screen and (min-width: 321px) and (max-width:720px) {
+@media screen and (min-width: 321px) and (max-width: 720px) {
   .news-card {
     min-height: 440px;
     max-width: 100%;
-    
   }
 }
-
 
 @media screen and (max-width: 320px) {
   .news-card {
@@ -252,7 +250,6 @@
     font-size: 16px;
     line-height: 22px;
     gap: 10px;
-    
   }
 
   .news-card__title {
@@ -267,6 +264,6 @@
   .news-card__text {
     overflow: hidden;
     font-size: 16px;
-line-height: 22px;
+    line-height: 22px;
   }
 }

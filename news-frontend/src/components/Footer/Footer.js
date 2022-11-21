@@ -35,10 +35,12 @@ const footer = () => {
           >
             <img src={Github} alt="Github-logo" />
           </a>
-          <a href="https://facebook.com"
-           className="footer__link"
-           target="_blank"
-           rel="noreferrer">
+          <a
+            href="https://facebook.com"
+            className="footer__link"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={Facebook} alt="facebook-logo" />
           </a>
         </div>

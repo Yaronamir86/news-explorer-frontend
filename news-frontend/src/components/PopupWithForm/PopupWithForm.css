@@ -36,13 +36,12 @@
   gap: 10px;
 }
 
-
-.modal__title{
-  font-family: 'Roboto';
-font-style: normal;
-font-weight: 900;
-font-size: 24px;
-line-height: 28px;
+.modal__title {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 .modal__image {
@@ -51,7 +50,7 @@ line-height: 28px;
   max-width: 75vw;
 }
 
-.modal__content{
+.modal__content {
   width: 430px;
   background: #ffffff;
   color: #000000;
@@ -63,22 +62,21 @@ line-height: 28px;
   position: relative;
 }
 
-.modal__icon{
+.modal__icon {
   display: flex;
   margin: 60px auto 32px;
 }
 
-.modal__status-message{
-  font-family: Inter;
-font-size: 24px;
-font-weight: 900;
-line-height: 29px;
-letter-spacing: 0em;
-text-align: center;
-
+.modal__status-message {
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
-.modal__question{
+.modal__question {
   padding-left: 36px;
   padding-right: 36px;
   margin: 0;
@@ -91,10 +89,10 @@ text-align: center;
   text-align: left;
 }
 
-.modal__button{
+.modal__button {
   border-radius: 2px;
-  background-color:#E6E8EB;;
-  color: #B6BCBF;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
   padding: 0;
   width: 80%;
   margin: auto;
@@ -118,7 +116,7 @@ text-align: center;
   height: 36px;
   right: -44px;
   top: -44px;
-  background-image: url('../../images/close.svg');
+  background-image: url("../../images/close.svg");
   color: white;
 }
 
@@ -127,20 +125,18 @@ text-align: center;
   cursor: pointer;
 }
 
-
 .modal__redirect {
   align-self: center;
 }
 
-.modal__redirect-button{
+.modal__redirect-button {
   background-color: transparent;
   border: none;
   padding: 0;
-  color:#2F71E5;
+  color: #2f71e5;
 }
 
 @media screen and (max-width: 600px) {
-
   .modal__close-btn {
     top: -35px;
     right: 0;
@@ -152,7 +148,6 @@ text-align: center;
 }
 
 @media screen and (max-width: 320px) {
-
   .modal {
     background-image: url(../../images/georgia-de-lotz--UsJoNxLaNo-unsplash.png);
     background-repeat: no-repeat;
@@ -170,14 +165,12 @@ text-align: center;
     margin-top: 52px;
     border-radius: 10px;
   }
-  
+
   .modal__close-btn {
     top: -35px;
     right: 10px;
-    background-image: url('../../images/mobile-close.svg');
+    background-image: url("../../images/mobile-close.svg");
     background-repeat: no-repeat;
     width: 24px;
   }
-
 }
-

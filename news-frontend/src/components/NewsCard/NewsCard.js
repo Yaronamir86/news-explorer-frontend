@@ -10,7 +10,6 @@ const NewsCard = ({ card }) => {
   const { isHome } = useHomePage();
   const { isLoggedIn } = useLoggedIn();
   const { openModal } = useModal();
-  
 
   const handleMouseOn = () => {
     !isLoggedIn && setShowToolTip(true);
@@ -25,7 +24,7 @@ const NewsCard = ({ card }) => {
     isHome && isLoggedIn && console.log("save card");
     !isHome && console.log("delete card");
   };
-  
+
   return (
     <li className="news-card-list__item">
       <article className="news-card" key={card.id}>
@@ -39,15 +38,16 @@ const NewsCard = ({ card }) => {
           <p className="news-card__text">{card.text}</p>
           <p className="news-card__source">{card.source}</p>
         </div>
-        {showToolTip &&(
-          <button className="news-card__tooltip">{isHome ? "Sign in to save articles" : "Remove from saved"}
-           {/* Sign in to save articles*/}
+        {showToolTip && (
+          <button className="news-card__tooltip">
+            {isHome ? "Sign in to save articles" : "Remove from saved"}
+            {/* Sign in to save articles*/}
           </button>
         )}
         <button
           className={`news-card__button ${
-            isHome ? "news-card__button-save" : "news-card__button-trash"}`
-          }
+            isHome ? "news-card__button-save" : "news-card__button-trash"
+          }`}
           aria-label={isHome ? "save article" : "delete article"}
           onMouseEnter={handleMouseOn}
           onMouseLeave={handleMouseOut}

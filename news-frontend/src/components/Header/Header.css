@@ -20,7 +20,7 @@
 
 .header__title {
   max-width: 608px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto-slab', Arial, Helvetica, sans-serif;
   font-size: 60px;
   font-weight: 400;
   line-height: 63px;
@@ -29,7 +29,7 @@
 }
 
 .header__paragraph {
-  font-family: "Roboto";
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -40,8 +40,7 @@
 }
 
 @media screen and (max-width: 768px) {
-
-  .header__container{
+  .header__container {
     padding-top: 38px;
     align-items: flex-start;
   }
@@ -62,7 +61,7 @@
   }
 }
 
-@media screen and (min-width: 321px) and (max-width:550px) {
+@media screen and (min-width: 321px) and (max-width: 550px) {
   .header__container {
     width: calc(100% - 32px);
     margin: auto;
@@ -70,8 +69,7 @@
 }
 
 @media screen and (max-width: 320px) {
-
-  .header__container{
+  .header__container {
     padding-top: 30px;
     align-content: center;
     margin-left: 19px;

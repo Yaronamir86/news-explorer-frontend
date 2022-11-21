@@ -9,10 +9,9 @@ const LoginPopup = () => {
   const [userData, setUserData] = React.useState({});
 
   const handleChange = (evt) => {
-    const { name, value } = evt.target
-    setUserData({ ...userData, [name]: value })
-  }
-  
+    const { name, value } = evt.target;
+    setUserData({ ...userData, [name]: value });
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -40,7 +39,7 @@ const LoginPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={userData.email || ''}
+          value={userData.email || ""}
           onChange={handleChange}
           autoComplete="true"
           required
@@ -55,7 +54,7 @@ const LoginPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="200"
-          value={userData.password || ''}
+          value={userData.password || ""}
           onChange={handleChange}
           autoComplete="false"
           required
