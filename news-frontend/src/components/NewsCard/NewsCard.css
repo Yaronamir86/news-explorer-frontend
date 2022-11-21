@@ -28,7 +28,7 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: grid;
-  grid-template-rows: 24px minmax(60px, 1fr) minmax(88px, auto) 20px;
+  grid-template-rows: 24px minmax(80px, 1fr) minmax(88px, auto) 20px;
   gap: 12px;
   padding: 20px 24px 24px;
   margin: 0;
@@ -141,6 +141,7 @@
   line-height: 24px;
   text-align: center;
   border: none;
+  z-index: 3;
 }
 
 .news-card__keywords {
