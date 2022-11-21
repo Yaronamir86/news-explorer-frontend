@@ -9,7 +9,7 @@ const Main = () => {
   return (
     <main className='main'>
       <div className="main-search__container">
-      <h1 className='main__title'>Search results</h1>
+      <h2 className='main__title'>Search results</h2>
       <NewsCardList/>
       <button className="main__button">Show more</button>
       </div>

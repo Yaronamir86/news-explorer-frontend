@@ -33,6 +33,11 @@
   line-height: 24px;
   text-align: center;
   border: none;
+  transition: all 0.5s;
+}
+
+.main__button:hover {
+background-color: #E8E8E8;
 }
 
 @media screen and (max-width: 768px) {

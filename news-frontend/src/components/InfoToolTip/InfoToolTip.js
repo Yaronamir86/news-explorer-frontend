@@ -12,7 +12,7 @@ const InfoToolTip = () => {
       name="infoToolTip"
       redirect="sign in"
       isOpen={modalContext.modalState.infoToolTip}
-      onClose={modalContext.modalState.infoToolTip}
+      onClick={modalContext.modalState.infoToolTip}
     ></PopupWithForm>
   );
 };

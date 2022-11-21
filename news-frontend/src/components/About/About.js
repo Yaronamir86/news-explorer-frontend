@@ -7,7 +7,7 @@ const About = () => {
       <div className="about__wrapper">
         <img className='about__avatar' src={avatar} alt='about avatar'/>
         <div className='about__content'>
-          <h1 className='about__title'>About the author</h1>
+          <h3 className='about__title'>About the author</h3>
           <p className='about__paragraph'>This block describes the project author. Here you should indicate your name,
            what you do, and which development technologies you know.</p>
            <p className='about__paragraph'>You can also talk about your experience with Practicum,

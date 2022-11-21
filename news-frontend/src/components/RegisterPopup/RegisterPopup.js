@@ -28,7 +28,7 @@ const RegisterPopup = () => {
       buttonText="sign up"
       redirect="sign in"
       isOpen={modalContext.modalState.signup}
-      onClose={modalContext.modalState.signup}
+      onClick={modalContext.modalState.signup}
       onSubmit={handleSubmit}
     >
       <fieldset className="form__fieldset">

@@ -19,6 +19,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Header />
+          <InfoToolTip/>
           <Main />
         </Route>
         <Route path="/saved-news">
@@ -31,7 +32,7 @@ function App() {
       <Footer />
       <LoginPopup/>
       <RegisterPopup/>
-     <InfoToolTip/>
+     {/*<InfoToolTip/>*/}
      <MobileMenu/>
     </div>
   );

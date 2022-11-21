@@ -27,7 +27,7 @@ const LoginPopup = () => {
       buttonText="sign in"
       redirect="sign up"
       isOpen={modalContext.modalState.signin}
-      onClose={modalContext.modalState.signin}
+      onClick={modalContext.modalState.signin}
       onSubmit={handleSubmit}
     >
       <fieldset className="form__fieldset">
