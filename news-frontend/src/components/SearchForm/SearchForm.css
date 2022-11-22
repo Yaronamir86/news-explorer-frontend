@@ -1,0 +1,136 @@
+.search__form {
+  width: 608px;
+  padding-top: 88px;
+  padding-bottom: 80px;
+  justify-content: center;
+  margin: auto;
+  flex-direction: row;
+}
+
+.search__wrapper {
+  max-width: 100%;
+  background-color: white;
+  justify-content: space-around;
+  margin: 0;
+  flex-direction: row;
+  border-radius: 50px;
+  border: none;
+  position: relative;
+}
+.search__input {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  padding: 20px 20px 20px 40px;
+  border-radius: 50px;
+  border: none;
+  flex-grow: 2;
+  color: #1a1b22;
+  margin: auto;
+}
+
+.search__button {
+  background-color: #2f71e5;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: white;
+  padding: 20px 50px;
+  border-radius: 50px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.search__button:hover {
+  background-color: #347eff;
+}
+
+.search__button:active {
+  background-color: #2a65cc;
+}
+
+@media screen and (max-width: 768px) {
+  .search__form {
+    max-width: 448px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    justify-content: center;
+    margin: auto;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .search__form {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .search__wrapper {
+    display: grid;
+    grid-template-rows: 62px 62px;
+    gap: 16px;
+    background-color: transparent;
+  }
+
+  .search__button {
+    padding: 16px 116px;
+    border-radius: 50px;
+    border: none;
+    position: relative;
+    width: 100%;
+  }
+
+  .search__input {
+    width: 256px;
+    padding: 20px 16px;
+    border-radius: 50px;
+    border: none;
+    flex-grow: 2;
+    color: #1a1b22;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .search__form {
+    max-width: 288px;
+    padding-top: 122px;
+    padding-bottom: 32px;
+    justify-content: space-around;
+  }
+
+  .search__wrapper {
+    display: grid;
+    grid-template-rows: 62px 62px;
+    gap: 16px;
+    background-color: transparent;
+  }
+
+  .search__button {
+    padding: 16px 116px;
+    border-radius: 50px;
+    border: none;
+    position: relative;
+  }
+
+  .search__input {
+    width: 256px;
+    padding: 20px 16px;
+    border-radius: 50px;
+    border: none;
+    flex-grow: 2;
+    color: #1a1b22;
+    margin: auto;
+  }
+}
