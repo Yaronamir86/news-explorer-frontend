@@ -26,7 +26,6 @@ const NewsCard = ({ card }) => {
   };
 
   return (
-    <li className="news-card-list__item">
       <article className="news-card" key={card.id}>
         <div
           className="news-card__image-container"
@@ -55,7 +54,6 @@ const NewsCard = ({ card }) => {
         ></button>
         {!isHome && <p className="news-card__keywords">{card.keyword}</p>}
       </article>
-    </li>
   );
 };
 

@@ -3,6 +3,7 @@ import "./SearchForm.css";
 
 const SearchForm = () => {
   return (
+    <section className="Search">
     <form action="submit" className="search__form" autoComplete="off">
       <div className="search__wrapper">
         <input
@@ -15,6 +16,7 @@ const SearchForm = () => {
         </button>
       </div>
     </form>
+    </section>
   );
 };
 

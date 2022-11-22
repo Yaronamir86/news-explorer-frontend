@@ -4,7 +4,7 @@ import "./SavedNews.css";
 
 const SavedNews = () => {
   return (
-    <main className="saved-news__container">
+    <main className="saved-news">
       <NewsCardList />
     </main>
   );

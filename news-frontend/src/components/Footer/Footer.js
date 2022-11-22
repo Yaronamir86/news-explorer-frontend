@@ -6,7 +6,7 @@ import Github from "../../images/github.svg";
 
 const footer = () => {
   return (
-    <footer className="footer-container">
+    <footer className="footer">
       <div className="footer__copyrights">© 2022, Powered by Yaron amir.</div>
       <div className="footer__links">
         <ul className="footer__list">

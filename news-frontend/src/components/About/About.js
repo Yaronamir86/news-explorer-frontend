@@ -4,7 +4,7 @@ import avatar from "../../images/avatar.png";
 
 const About = () => {
   return (
-    <div className="about__wrapper">
+    <div className="about">
       <img className="about__avatar" src={avatar} alt="about avatar" />
       <div className="about__content">
         <h3 className="about__title">About the author</h3>

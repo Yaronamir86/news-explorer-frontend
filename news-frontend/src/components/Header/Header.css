@@ -20,7 +20,7 @@
 
 .header__title {
   max-width: 608px;
-  font-family: 'Roboto-slab', Arial, Helvetica, sans-serif;
+  font-family: "Roboto-slab", Arial, Helvetica, sans-serif;
   font-size: 60px;
   font-weight: 400;
   line-height: 63px;
@@ -29,7 +29,7 @@
 }
 
 .header__paragraph {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;

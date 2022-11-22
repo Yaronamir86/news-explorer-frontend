@@ -2,7 +2,7 @@
   min-width: 100%;
 }
 
-.savedNewsHeader__wrapper {
+.savedNewsHeader {
   padding: 44px 104px 56px 104px;
   background-color: white;
   color: black;
@@ -51,7 +51,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .savedNewsHeader__wrapper {
+  .savedNewsHeader {
     padding: 24px 40px 32px;
     background-color: white;
     color: black;
@@ -60,7 +60,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .savedNewsHeader__wrapper {
+  .savedNewsHeader {
     padding: 8px 16px 32px;
     background-color: white;
     color: black;

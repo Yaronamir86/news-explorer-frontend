@@ -11,7 +11,7 @@ const SavedNewsHeader = () => {
   return (
     <div className="SavedNews">
       <Navigation isHome={!isHome} />
-      <div className="savedNewsHeader__wrapper">
+      <div className="savedNewsHeader">
         <p className="savedNewsHeader__page">Saved articles</p>
         <h1 className="savedNewsHeader__title">
           {user.firstName}, you have 5 saved articles

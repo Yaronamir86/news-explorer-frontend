@@ -1,4 +1,4 @@
-.search-results__container {
+.search-results {
   background-color: #f5f6f7;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -36,8 +36,9 @@
   background-color: #e8e8e8;
 }
 
+
 @media screen and (max-width: 768px) {
-  .search-results-search__container {
+  .search-results {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -61,7 +62,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .search-results__container {
+  .search-results {
     padding-top: 32px;
     padding-bottom: 24px;
   }
