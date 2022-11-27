@@ -5,6 +5,7 @@ const LoggedInContext = createContext();
 
 const LoggedInContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [savedCards, setCards] = useState([]);
   const [user, setUser] = useState({
     email: "yaron@gmail.com",
     firstName: "Yaron",
@@ -16,12 +17,17 @@ const LoggedInContextProvider = ({ children }) => {
   const handleLogOut = () => {
     setIsLoggedIn(false);
     setUser({});
+    setCards([]);
     history.push("/");
   };
 
+  const setCurrentUser = (values) => {
+    setUser({ ...values });
+};
+
   return (
     <LoggedInContext.Provider
-      value={{ isLoggedIn, setIsLoggedIn, user, setUser, handleLogOut }}
+      value={{ isLoggedIn, setIsLoggedIn, user, setUser, handleLogOut, setCurrentUser, savedCards }}
     >
       {children}
     </LoggedInContext.Provider>

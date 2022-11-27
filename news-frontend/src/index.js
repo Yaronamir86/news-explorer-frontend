@@ -6,6 +6,7 @@ import ModalContextProvider from "./contexts/ModalContext";
 import HomeContextProvider from "./contexts/HomePageContext";
 import LoggedInContextProvider from "./contexts/LoggedInContext";
 import { BrowserRouter } from "react-router-dom";
+import ArticleContextProvider from "./contexts/ArticleContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +15,9 @@ root.render(
     <HomeContextProvider>
       <LoggedInContextProvider>
         <ModalContextProvider>
+          <ArticleContextProvider>
           <App />
+          </ArticleContextProvider>
         </ModalContextProvider>
       </LoggedInContextProvider>
     </HomeContextProvider>

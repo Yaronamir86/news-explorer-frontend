@@ -4,7 +4,7 @@ import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
 import { useHomePage } from "../../contexts/HomePageContext";
 
-const Header = () => {
+const Header = (getSearch, search, onChangeHandler) => {
   const isHome = useHomePage();
   return (
     <div className="header">
@@ -16,7 +16,11 @@ const Header = () => {
           account.
         </p>
       </div>
-      <SearchForm />
+      <SearchForm 
+      getSearch={getSearch}
+       search={search}
+       onChangeHandler={onChangeHandler}
+       />
     </div>
   );
 };

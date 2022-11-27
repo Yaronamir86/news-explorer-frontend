@@ -30,6 +30,7 @@
   flex-grow: 2;
   color: #1a1b22;
   margin: auto;
+  width: 80%;
 }
 
 .search__button {

@@ -10,7 +10,10 @@ import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import InfoToolTip from "../InfoToolTip/InfoToolTip";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
+
 function App() {
+
+  
   return (
     <div className="app">
       <Switch>
