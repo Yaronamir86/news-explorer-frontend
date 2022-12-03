@@ -1,24 +1,34 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useModal } from "../../contexts/ModalContext";
+import { useLoggedIn } from "../../contexts/LoggedInContext";
 import "../../blocks/Form.css";
+import  mainApi from "../../utils/MainApi";
 
 const RegisterPopup = () => {
   const modalContext = useModal();
+  const {handleRegister} = useLoggedIn()
 
-  const [userData, setUserData] = React.useState({});
+  const [values, setValues] = React.useState({});
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    setUserData({ ...userData, [name]: value });
+    setValues({ ...values, [name]: value });
   };
   
  
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(userData);
+    console.log(values);
+    handleRegister(values);
     modalContext.closeModal(RegisterPopup);
+    const res =  mainApi.register(values);
+    if (!res.message) {
+        modalContext.openModal('infoToolTip');
+        return;
+    }
+    console.log("registerd");
   }
 
   return (
@@ -26,9 +36,9 @@ const RegisterPopup = () => {
       title="Register"
       name="signup"
       buttonText="sign up"
-      redirect="sign in"
+      or="or "
+      redirect= "sign in"
       isOpen={modalContext.modalState.signup}
-      onClick={modalContext.modalState.signup}
       onSubmit={handleSubmit}
     >
       <fieldset className="form__fieldset">
@@ -41,7 +51,8 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={userData.email || ''}
+          autoComplete="true"
+          value={values.email || ''}
           onChange={handleChange}
           required
         />
@@ -55,7 +66,8 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="200"
-          value={userData.password || ''}
+          value={values.password || ''}
+          autoComplete="false"
           onChange={handleChange}
           required
         />
@@ -69,7 +81,8 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={userData.name || ''}
+          autoComplete="true"
+          value={values.name || ''}
           onChange={handleChange}
           required
         />

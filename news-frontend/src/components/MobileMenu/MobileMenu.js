@@ -6,11 +6,13 @@ import { useModal } from "../../contexts/ModalContext";
 import { NavLink } from "react-router-dom";
 import { useLoggedIn } from "../../contexts/LoggedInContext";
 import { useHomePage } from "../../contexts/HomePageContext";
+import { useUser } from "../../contexts/UserContext"
 
 const MobileMenu = () => {
   const { isHome } = useHomePage();
   const { closeModal, openModal, modalState } = useModal();
-  const { isLoggedIn, user, handleLogOut } = useLoggedIn();
+  const { isLoggedIn, handleLogOut } = useLoggedIn();
+  const { currentUser } = useUser();
   const { mobile } = modalState;
 
   const handleMobileButtonClick = () => {
@@ -102,7 +104,7 @@ const MobileMenu = () => {
               onClick={handleMobileButtonClick}
             >
               <span className="mobile__button-text">
-                {isLoggedIn ? user.firstName : "sign in"}
+                {isLoggedIn ? currentUser.name : "sign in"}
               </span>
               {isLoggedIn && (
                 <span

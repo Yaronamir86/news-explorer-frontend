@@ -59,8 +59,8 @@ const PopupWithForm = (props) => {
           >
             {props.buttonText}
           </button>
-          <p className="modal__redirect">
-            or{" "}
+          <p className= "modal__redirect">
+            {props.or}
             <button
               className="modal__redirect-button"
               type="button"

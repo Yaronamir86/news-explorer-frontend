@@ -1,12 +1,13 @@
 import React from "react";
 import { useContext, useState, createContext } from "react";
 
+
 const ModalContext = createContext();
 
 const ModalProvider = ({ children }) => {
   const [modalState, setModalState] = useState({
-    signIn: false,
-    signUp: false,
+    signin: false,
+    signup: false,
     infoToolTip: false,
     mobile: false,
   });
@@ -23,7 +24,7 @@ const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider
-      value={{ modalState, setModalState, openModal, closeModal }}
+      value={{ modalState, setModalState, openModal, closeModal}}
     >
       {children}
     </ModalContext.Provider>

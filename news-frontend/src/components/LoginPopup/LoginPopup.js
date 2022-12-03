@@ -1,22 +1,27 @@
 import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useModal } from "../../contexts/ModalContext";
+import { useLoggedIn } from "../../contexts/LoggedInContext";
 import "../../blocks/Form.css";
 
 const LoginPopup = () => {
   const modalContext = useModal();
+  const { handleLogin, values, setValues } = useLoggedIn();
 
-  const [userData, setUserData] = React.useState({});
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    setUserData({ ...userData, [name]: value });
+    setValues({ ...values, [name]: value });
   };
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (!values.email || !values.password) {
+      return;
+    }
     modalContext.closeModal(LoginPopup);
-    console.log(userData);
+    handleLogin(values);
+    console.log(values);
   }
 
   return (
@@ -24,9 +29,9 @@ const LoginPopup = () => {
       title="Login"
       name="signin"
       buttonText="sign in"
-      redirect="sign up"
+      or="or "
+      redirect= "sign up"
       isOpen={modalContext.modalState.signin}
-      onClick={modalContext.modalState.signin}
       onSubmit={handleSubmit}
     >
       <fieldset className="form__fieldset">
@@ -39,7 +44,7 @@ const LoginPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="40"
-          value={userData.email || ""}
+          value={values.email || ""}
           onChange={handleChange}
           autoComplete="true"
           required
@@ -54,7 +59,7 @@ const LoginPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="200"
-          value={userData.password || ""}
+          value={values.password || ""}
           onChange={handleChange}
           autoComplete="false"
           required

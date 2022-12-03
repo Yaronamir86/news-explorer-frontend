@@ -117,6 +117,9 @@
 .news-card__button-save_active {
   background-image: url("../../images/icon_active.svg");
 }
+.news-card__button-save_active:hover {
+  background-image: url("../../images/icon_active.svg");
+}
 
 .news-card__button-save:active {
   background-image: url("../../images/icon_active.svg");
@@ -206,7 +209,7 @@
   .news-card__text-container {
     padding: 16px;
     height: 270px;
-    grid-template-rows: 24px minmax(96px, auto) minmax(88, auto) 20px;
+    grid-template-rows: 24px minmax(96px, auto) minmax(106px, auto) 20px;
     overflow: hidden;
   }
 

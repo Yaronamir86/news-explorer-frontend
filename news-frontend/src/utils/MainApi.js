@@ -1,47 +1,79 @@
-//export const BASE_URL = "http://localhost:3001";
+class MainApi {
+  constructor(baseUrl, headers) {
+    this._baseUrl = baseUrl;
+    this._headers = headers;
+  }
 
-let node_env = "production";
-
-let BASE_URL =
-  node_env === "production"
-    ? "https://api.yaron-news.students.nomoredomainssbs.ru"
-    : "http://localhost:3000";
-
-const customFetch = (url, headers) => {
-  return fetch(url, headers).then(res =>
-    res.ok ? res.json() : Promise.reject(res.statusText)
-  );
-};
-
-export const register = (email, password) => {
-  return customFetch(`${BASE_URL}/signup`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email, password })
-  });
-};
-
-export const login = (email, password) => {
-  return customFetch(`${BASE_URL}/signin`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email, password })
-  });
-};
-
-export const checkToken = (token) => {
-  return customFetch(`${BASE_URL}/users/me`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
     }
-  });
-};
+    return Promise.reject(`Error ${res.status}`);
+  }
+
+  saveArticle (article, token) {
+    return fetch(`${this._baseUrl}/articles`, {
+      method: "POST",
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(article),
+    }).then(this._checkResponse);
+  };
+
+  getSavedArticles(token) {
+    return fetch(`${this._baseUrl}/articles`, {
+      method: "GET",
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(this._checkResponse);
+  }
+
+  deleteArticle(token) {
+    return fetch(`${this._baseUrl}/articles`, {
+      method: "DELETE",
+      headers: {
+        ...this._headers,
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(this._checkResponse);
+  }
+
+  register({ name, email, password }) {
+    return fetch(`${this._baseUrl}/signup`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({ name, email, password }),
+    }).then(this._checkResponse);
+  }
+
+  login({ email, password }) {
+    return fetch(`${this._baseUrl}/signin`, {
+      method: "POST",
+      headers: this._headers,
+      body: JSON.stringify({ email, password }),
+    }).then(this._checkResponse);
+  }
+
+  getUsersInfo (token) {
+    return fetch(`${this._baseUrl}/users/me`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(this._checkResponse);
+  };
+}
+const baseUrl = "http://localhost:3000";
+
+const mainApi = new MainApi(baseUrl, {
+  "Content-Type": "application/json",
+  Accept: "application/json",
+});
+
+export default mainApi;

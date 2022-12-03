@@ -5,11 +5,14 @@ import NewsCard from "../NewsCard/NewsCard";
  import { useArticles } from "../../contexts/ArticleContext";
  import Preloader from "../PreLoader/PreLoader";
  import NotFound from "../NotFound/NotFound";
+ import { useHomePage } from "../../contexts/HomePageContext";
  
 
 
 const NewsCardList = () => {
-  const { cards, toShowMore, isLoading, notFound} = useArticles();
+  const { cards, toShowMore, isLoading, notFound, isSaveCards, keyword} = useArticles();
+  const { isHome } = useHomePage();
+
 
 
   return (
@@ -17,20 +20,33 @@ const NewsCardList = () => {
     <ul className="news-card-list">
     {isLoading && <Preloader/>}
     {notFound && <NotFound/>}
-      {cards.slice(0, toShowMore).map((card, index) => {
-        return (
+      {isHome ? cards.slice(0, toShowMore).map((article, index) => (
         <li key={index} className="news-card-list__item">
           <NewsCard 
-          image={card.urlToImage}
-            title={card.title}
-            text= {card.content}
-            date={card.publishedAt}
-            currentCard={card}
-            source={card.source.name}
+          image={article.urlToImage}
+            title={article.title}
+            text= {article.description}
+            date={article.publishedAt}
+            source={article.source.name}
+            keyword={keyword}
+            link={article.url}
             />
         </li>
-      )}
-      )}
+      ))
+      : 
+      isSaveCards.map((article, index) => (
+        <li key={index} className="news-card-list__item">
+          <NewsCard 
+          image={article.urlToImage}
+          title={article.title}
+          text= {article.description}
+          date={article.publishedAt}
+          source={article.source.name}
+          keyword={keyword}
+          link={article.url}
+            />
+        </li>
+      ))}
     </ul>
     </>
   );
