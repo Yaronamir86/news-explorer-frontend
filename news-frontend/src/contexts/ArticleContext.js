@@ -21,7 +21,6 @@ const ArticleContextProvider = ({ children }) => {
     const token = localStorage.getItem("jwt");
     if (!isLoggedIn) {
       setIsSaveCards([]);
-      //console.log(token)
       return;
     } 
     mainApi.getSavedArticles(token)
@@ -31,33 +30,18 @@ const ArticleContextProvider = ({ children }) => {
     });
   }, [isLoggedIn, token]);
 
- // useEffect(() => {
- //   const token = localStorage.getItem("jwt");
- //   console.log(token)
- //   if (token) {
-//      mainApi
-  //      .getSavedArticles(token)
- //       .then((res) => {
- //         setIsSaveCards(res);
- //         console.log(res)
- //       })
- //       .catch((err) => console.log(err));
- //   } else {
- //     setIsSaveCards([]);
- //   }
-//  }, [token]);
 
   /////////////////////////SAVING ARTICLE/////////////////////////////////////
 
   const handleSaveCard = (article) => {
     const token = localStorage.getItem("jwt");
-    const isSaveCard = checkIfIsSaveCard(article, token);
+    const isSaveCard = checkIfSave(article, token);
     if (!isSaveCard) {
       console.log(token)
       mainApi
         .saveArticle(article, token)
         .then((res) => {
-          console.log(isSaveCards)
+          console.log(isSaveCard)
           setIsSaveCards([...isSaveCards, res]);
           console.log('saved!');
         })
@@ -65,7 +49,7 @@ const ArticleContextProvider = ({ children }) => {
     } 
   };
 
-  const checkIfIsSaveCard = (article) => {
+  const checkIfSave = (article) => {
     isSaveCards.find((a) => a.link === article.url);
   };
 
@@ -91,14 +75,16 @@ const ArticleContextProvider = ({ children }) => {
 
   ////////////////////////////////DELETE-ARTICLE////////////////////////////////
 
-  const handleDeleteCard = (article) => {
+  const handleDeleteCard = ( article) => {
+    const token = localStorage.getItem("jwt");
     mainApi
-      .deleteArticle(article._id)
+      .deleteArticle(article._id, token)
       .then((res) => {
-        const newIsSavecard = isSaveCards.filter(
-          (isSaveCard) => newIsSavecard.id !== article._id
+        const newIsSaveCard = article.filter(
+          (isSaveCard) => isSaveCard._id !== article._id
         );
-        setIsSaveCards(newIsSavecard);
+        setIsSaveCards(newIsSaveCard);
+        console.log(newIsSaveCard);
       })
       .catch((err) => console.log(err));
   };

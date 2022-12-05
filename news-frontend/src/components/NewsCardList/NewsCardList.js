@@ -37,13 +37,13 @@ const NewsCardList = () => {
       isSaveCards.map((article, index) => (
         <li key={index} className="news-card-list__item">
           <NewsCard 
-          image={article.urlToImage}
+          image={article.image}
           title={article.title}
-          text= {article.description}
-          date={article.publishedAt}
-          source={article.source.name}
-          keyword={keyword}
-          link={article.url}
+          text= {article.text}
+          date={article.date}
+          source={article.source}
+          keyword={article.keyword}
+          url={article.link}
             />
         </li>
       ))}

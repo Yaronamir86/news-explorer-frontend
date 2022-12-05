@@ -1,10 +1,11 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { useLoggedIn } from "../contexts/LoggedInContext";
 
 const useValidateForm = () => {
 const { setLoggedInError } = useLoggedIn();
 const [values, setValues] = useState({})
 const [errors, setErrors] = useState({})
+const [isValid, setIsValid] = useState({})
 ;
 
 const validatePassword = useCallback((password) => {
@@ -26,20 +27,37 @@ const validatePassword = useCallback((password) => {
     setLoggedInError('');
 }
 
-//useEffect(() => {
-//    if (
-//        object.values(values).every((value) => value !== '') &&
-//        object.values(errors).every((error) => error === '') &&
-//        values.password?.length >= 8
- //       ) {
- //           setIsValid(true)
-//        }
-//    })
+useEffect(() => {
+    if (
+        Object.values(values).every((value) => value !== '') &&
+        Object.values(errors).every((error) => error === '') &&
+        values.password?.length >= 8
+       ) {
+           setIsValid(true)
+        } else {
+            setIsValid(false);
+        }
+    },[values, errors]);
+
+    const resetForm = useCallback(
+        (newValues={}, newErrors={}, newIsvalid=false) => {
+            setValues(newValues);
+            setErrors(newErrors);
+            setIsValid(newIsvalid);
+        }, [ setValues, setErrors, setIsValid ]
+    )
+
+    
 
 
 return{
    validatePassword,
    handleChange,
+   isValid,
+   setIsValid,
+   resetForm,
+   setValues,
+   values,
 };
 };
 export default useValidateForm;

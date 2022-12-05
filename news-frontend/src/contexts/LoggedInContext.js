@@ -37,7 +37,7 @@ const LoggedInContextProvider = ({ children }) => {
   };
   checkToken();
   },[ history, token, setCurrentUser ]);
-  console.log(isLoggedIn, token);
+  
 
   //////////////////////////////REGISTER-HANDLINGS////////////////
 

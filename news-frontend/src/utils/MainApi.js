@@ -32,8 +32,8 @@ class MainApi {
     }).then(this._checkResponse);
   }
 
-  deleteArticle(token) {
-    return fetch(`${this._baseUrl}/articles`, {
+  deleteArticle(id, token) {
+    return fetch(`${this._baseUrl}/articles/${id}`, {
       method: "DELETE",
       headers: {
         ...this._headers,

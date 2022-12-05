@@ -17,17 +17,16 @@ const NewsCard = (article) => {
 
   React.useEffect(() => {
     const checkIfSaved = () => {
-      const articleIsSaved = isSaveCards.find((article) => {
-        return article.link === article.url;
-      });
-  
+      const articleIsSaved = isSaveCards.find((isSaveCards) => {
+        return article.link === isSaveCards.link;
+      })
       articleIsSaved ? setIsSave(true) : setIsSave(false);
     };
     if (!isHome) {
       return;
     }
     checkIfSaved();
-  },[isSaveCards, article.url, isHome]);
+  },[isSaveCards, article , isHome]);
 
 
   const handleMouseOn = () => {
@@ -41,12 +40,13 @@ const NewsCard = (article) => {
   const handleSaveArticles = () => {
     handleSaveCard(article);
     setIsSave(true);
+    console.log(isSave);
   }
 
   const handleButtonClick = () => {
     isHome && !isLoggedIn && openModal("signin");
     isHome && isLoggedIn && handleSaveArticles();
-    !isHome && handleDeleteCard();
+    !isHome && handleDeleteCard(article);
   };
 
   const realDate = new Date(article.date);

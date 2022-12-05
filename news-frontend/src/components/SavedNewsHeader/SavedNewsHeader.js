@@ -3,18 +3,24 @@ import Navigation from "../Navigation/Navigation";
 import SavedNews from "../SavedNews/SavedNews";
 import "./SavedNewsHeader.css";
 import { useHomePage } from "../../contexts/HomePageContext";
-import { useLoggedIn } from "../../contexts/LoggedInContext";
+import { useUser } from "../../contexts/UserContext";
+import { useArticles } from "../../contexts/ArticleContext";
+
 
 const SavedNewsHeader = () => {
-  const { user } = useLoggedIn();
+  const { currentUser } = useUser();
   const { isHome } = useHomePage();
+  const { isSaveCards } = useArticles();
+
+  
+
   return (
     <div className="SavedNews">
       <Navigation isHome={!isHome} />
       <div className="savedNewsHeader">
         <p className="savedNewsHeader__page">Saved articles</p>
         <h1 className="savedNewsHeader__title">
-          {user.firstName}, you have 5 saved articles
+          {currentUser.name}, you have {isSaveCards.length} saved articles
         </h1>
         <p className="savedNewsHeader__info">
           By keywords:
