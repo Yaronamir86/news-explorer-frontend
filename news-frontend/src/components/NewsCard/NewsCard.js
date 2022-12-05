@@ -46,7 +46,7 @@ const NewsCard = (article) => {
   const handleButtonClick = () => {
     isHome && !isLoggedIn && openModal("signin");
     isHome && isLoggedIn && handleSaveArticles();
-    !isHome && handleDeleteCard(article);
+    !isHome && handleDeleteCard(article._id);
   };
 
   const realDate = new Date(article.date);

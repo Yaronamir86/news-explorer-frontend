@@ -26,7 +26,6 @@ const ArticleContextProvider = ({ children }) => {
     mainApi.getSavedArticles(token)
     .then((res) => {
       setIsSaveCards(res);
-      console.log(res)
     });
   }, [isLoggedIn, token]);
 
@@ -35,23 +34,24 @@ const ArticleContextProvider = ({ children }) => {
 
   const handleSaveCard = (article) => {
     const token = localStorage.getItem("jwt");
-    const isSaveCard = checkIfSave(article, token);
-    if (!isSaveCard) {
-      console.log(token)
+    const savedCard = checkIfSave(article);
+    if (!savedCard) {
       mainApi
         .saveArticle(article, token)
         .then((res) => {
-          console.log(isSaveCard)
           setIsSaveCards([...isSaveCards, res]);
           console.log('saved!');
         })
         .catch((err) => console.log(err));
-    } 
+    } else {
+      handleDeleteCard(savedCard._id);
+      console.log('deleted!');
+    }
   };
 
-  const checkIfSave = (article) => {
-    isSaveCards.find((a) => a.link === article.url);
-  };
+  const checkIfSave = (article) => 
+    isSaveCards.find((a) => a.link === article.link);
+  
 
 
   ///////////////////ARTICLE-SEARCH-BY-KEYWORD(NEWS-API)/////////////////////////////
@@ -75,19 +75,18 @@ const ArticleContextProvider = ({ children }) => {
 
   ////////////////////////////////DELETE-ARTICLE////////////////////////////////
 
-  const handleDeleteCard = ( article) => {
+  const handleDeleteCard = (articleId) => {
     const token = localStorage.getItem("jwt");
     mainApi
-      .deleteArticle(article._id, token)
+      .deleteArticle(articleId, token)
       .then((res) => {
-        const newIsSaveCard = article.filter(
-          (isSaveCard) => isSaveCard._id !== article._id
+        const newIsSaveCard = isSaveCards.filter(
+          (isSaveCard) => isSaveCard._id !== articleId
         );
         setIsSaveCards(newIsSaveCard);
-        console.log(newIsSaveCard);
       })
-      .catch((err) => console.log(err));
-  };
+      .catch((err) => console.log(err));   
+};
 
 
   //////////////////////////DIFFERENT-HANDLERS//////////////////////////

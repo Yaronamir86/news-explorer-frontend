@@ -44,6 +44,7 @@ const NewsCardList = () => {
           source={article.source}
           keyword={article.keyword}
           url={article.link}
+          _id={article._id}
             />
         </li>
       ))}
