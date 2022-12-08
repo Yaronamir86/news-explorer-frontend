@@ -18,8 +18,8 @@ const LoginPopup = () => {
     }
     modalContext.closeModal(LoginPopup);
     handleLogin(values);
-    console.log(values);
     resetForm();
+    console.log(values);
   }
 
   return (

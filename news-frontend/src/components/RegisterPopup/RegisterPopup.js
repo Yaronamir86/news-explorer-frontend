@@ -15,8 +15,8 @@ const RegisterPopup = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(values);
     handleRegister(values);
+    resetForm();
     modalContext.closeModal(RegisterPopup);
     const res =  mainApi.register(values);
     if (!res.message) {
@@ -24,7 +24,6 @@ const RegisterPopup = () => {
         return;
     }
     console.log("registerd");
-    resetForm(values);
   }
 
   return (

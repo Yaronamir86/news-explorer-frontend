@@ -7,6 +7,7 @@ import { useValidateForm } from "../../hooks/useForm";
 const PopupWithForm = (props) => {
   const modalContext = useModal();
 
+  // eslint-disable-next-line
   const { isValid } = useValidateForm();
   
   useEffect(() => {
@@ -58,7 +59,7 @@ const PopupWithForm = (props) => {
          <button
             className={`${ props.isValid ? "modal__button modal__button_active" : "modal__button modal__button_disabled" }`}
             type="submit"
-            disabled= {!isValid}
+        
             onClick={props.submit}
           >
             {props.buttonText}
