@@ -10,7 +10,7 @@ const LoggedInContextProvider = ({ children }) => {
   const [savedCards, setSavedCards] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [values, setValues] = useState({});
-  const [loggedinError, setLoggedInError] = useState('');
+  const [loggedInError, setLoggedInError] = useState('');
   const { setCurrentUser } = useUser();
   const history = useHistory();
 
@@ -111,7 +111,7 @@ const LoggedInContextProvider = ({ children }) => {
         handleLogin,
         token,
         setToken,
-        loggedinError,
+        loggedInError,
         setLoggedInError,
       }}
     >

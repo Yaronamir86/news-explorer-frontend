@@ -88,11 +88,8 @@
   letter-spacing: 0em;
   text-align: left;
 }
-
-.modal__button {
+.modal__button{
   border-radius: 2px;
-  background-color: #e6e8eb;
-  color: #b6bcbf;
   padding: 0;
   width: 80%;
   margin: auto;
@@ -102,10 +99,15 @@
   transition: all 0.4s;
 }
 
-/*.modal__button:hover{
-  background: #2F71E5;;
+.modal__button_active {
+  color: white;
+  background-color: #2F71E5;
+}
+
+.modal__button_disabled{
+  background-color:#b6bcbf;
   cursor: pointer;
-}*/
+}
 
 .modal__close-btn {
   background: none;

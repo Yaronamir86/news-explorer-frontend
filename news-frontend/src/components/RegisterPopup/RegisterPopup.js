@@ -4,18 +4,13 @@ import { useModal } from "../../contexts/ModalContext";
 import { useLoggedIn } from "../../contexts/LoggedInContext";
 import "../../blocks/Form.css";
 import  mainApi from "../../utils/MainApi";
+import { useValidateForm } from "../../hooks/useForm";
 
 const RegisterPopup = () => {
   const modalContext = useModal();
   const {handleRegister} = useLoggedIn()
-
-  const [values, setValues] = React.useState({});
-
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
-    setValues({ ...values, [name]: value });
-  };
-  
+  const { values, handleChange, errors, isValid, resetForm } =
+    useValidateForm();
  
 
   function handleSubmit(e) {
@@ -29,6 +24,7 @@ const RegisterPopup = () => {
         return;
     }
     console.log("registerd");
+    resetForm(values);
   }
 
   return (
@@ -40,6 +36,7 @@ const RegisterPopup = () => {
       redirect= "sign in"
       isOpen={modalContext.modalState.signup}
       onSubmit={handleSubmit}
+      isValid={isValid}
     >
       <fieldset className="form__fieldset">
         <h3 className="form__input-title">Email</h3>
@@ -56,7 +53,7 @@ const RegisterPopup = () => {
           onChange={handleChange}
           required
         />
-        <span className="form__input-error email-input-error"></span>
+        <span className="form__input-error email-input-error">{errors.email}</span>
         <h3 className="form__input-title">Password</h3>
         <input
           id="password-input"
@@ -71,7 +68,7 @@ const RegisterPopup = () => {
           onChange={handleChange}
           required
         />
-        <span className="form__input-error password-input-error"></span>
+        <span className="form__input-error password-input-error">{errors.password}</span>
         <h3 className="form__input-title">Username</h3>
         <input
           id="userName-input"
@@ -86,7 +83,7 @@ const RegisterPopup = () => {
           onChange={handleChange}
           required
         />
-        <span className="form__input-error name-input-error"></span>
+        <span className="form__input-error name-input-error">{errors.name}</span>
         <span className="form__input-error form__input-error_type-general"></span>
       </fieldset>
     </PopupWithForm>

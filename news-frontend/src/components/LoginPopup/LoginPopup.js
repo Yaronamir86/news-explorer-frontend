@@ -2,17 +2,14 @@ import React from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useModal } from "../../contexts/ModalContext";
 import { useLoggedIn } from "../../contexts/LoggedInContext";
+import { useValidateForm } from "../../hooks/useForm";
 import "../../blocks/Form.css";
 
 const LoginPopup = () => {
   const modalContext = useModal();
-  const { handleLogin, values, setValues } = useLoggedIn();
-
-
-  const handleChange = (evt) => {
-    const { name, value } = evt.target;
-    setValues({ ...values, [name]: value });
-  };
+  const { handleLogin, loggedInError } = useLoggedIn();
+  const { values, handleChange, errors, isValid, resetForm } =
+    useValidateForm();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +19,7 @@ const LoginPopup = () => {
     modalContext.closeModal(LoginPopup);
     handleLogin(values);
     console.log(values);
+    resetForm();
   }
 
   return (
@@ -30,9 +28,12 @@ const LoginPopup = () => {
       name="signin"
       buttonText="sign in"
       or="or "
-      redirect= "sign up"
+      redirect="sign up"
       isOpen={modalContext.modalState.signin}
       onSubmit={handleSubmit}
+      onChange={handleChange}
+      isValid={isValid}
+      loggedInError={loggedInError}
     >
       <fieldset className="form__fieldset">
         <h3 className="form__input-title">Email</h3>
@@ -49,7 +50,9 @@ const LoginPopup = () => {
           autoComplete="true"
           required
         />
-        <span className="form__input-error email-input-error"></span>
+        <span className="form__input-error email-input-error">
+         {errors.email}
+        </span>
         <h3 className="form__input-title">Password</h3>
         <input
           id="password-input_type-signin"
@@ -64,7 +67,9 @@ const LoginPopup = () => {
           autoComplete="false"
           required
         />
-        <span className="form__input-error password-input-error"></span>
+        <span className="form__input-error password-input-error">
+          {errors.password}
+        </span>
         <span className="form__input-error form__input-error_type-general"></span>
       </fieldset>
     </PopupWithForm>
