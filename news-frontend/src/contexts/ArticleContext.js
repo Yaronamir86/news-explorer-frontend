@@ -60,8 +60,9 @@ const ArticleContextProvider = ({ children }) => {
     newsApi
       .getArticles(query)
       .then((res) => {
-        if (res.articles) {
+        if (res.articles.length > 0) {
           setCards(res.articles);
+          console.log(res.articles);
           setKeyword(query);
         } else {
           handleNotFound();
