@@ -55,7 +55,7 @@ const NewsCard = (article) => {
     <article className="news-card">
       <div
         className="news-card__image-container"
-        style={{ backgroundImage: `url(${article.image})` }}
+        style={{ backgroundImage: `url(${article.image})`, background:'image' }}
       ></div>
       <div className="news-card__text-container">
         <p className="news-card__date">{realDate.toDateString()}</p>
