@@ -69,7 +69,8 @@ class MainApi {
     }).then(this._checkResponse);
   };
 }
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://api.yaron-news.students.nomoredomainssbs.ru";
+
 
 const mainApi = new MainApi(baseUrl, {
   "Content-Type": "application/json",

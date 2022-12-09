@@ -29,10 +29,18 @@ const MobileMenu = () => {
       }
     }
 
+    function handleClickToClose(evt) {
+      if (evt.target.classList.contains('mobile_opened')) {
+        closeModal();
+      }
+    }
+
     document.addEventListener("keydown", handleEscClose);
+    document.addEventListener("click", handleClickToClose);
 
     return () => {
       document.removeEventListener("keydown", handleEscClose);
+      document.removeEventListener("click", handleClickToClose);
     };
   }, [mobile, closeModal]);
 

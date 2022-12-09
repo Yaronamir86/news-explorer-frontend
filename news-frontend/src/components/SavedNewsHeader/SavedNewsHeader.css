@@ -1,8 +1,4 @@
 .savedNewsHeader {
-  min-width: 100%;
-}
-
-.savedNewsHeader {
   padding: 44px 104px 56px 104px;
   background-color: white;
   color: black;
@@ -50,14 +46,6 @@
   text-align: left;
 }
 
-@media screen and (max-width: 768px) {
-  .savedNewsHeader {
-    padding: 24px 40px 32px;
-    background-color: white;
-    color: black;
-    max-width: 100%;
-  }
-}
 
 @media screen and (max-width: 768px) {
   .savedNewsHeader {
