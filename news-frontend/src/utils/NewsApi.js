@@ -12,22 +12,21 @@ class NewsApi {
     return Promise.reject(`Error ${res.status}`);
   }
 
-
-_getLastWeek() {
-  return new Date(
+  _getLastWeek() {
+    return new Date(
       this.time.getFullYear(),
       this.time.getMonth(),
       this.time.getDate() - 7
-  );
-}
+    );
+  }
 
   getArticles(query) {
     const lastWeek = this._getLastWeek();
-    return fetch( `${this.baseUrl}?q=${(query)}&from=${lastWeek}&to=${this.time}&pageSize=90&apiKey=${this.key}`)
-    .then(this._checkResponse);
+    return fetch(
+      `${this.baseUrl}?q=${query}&from=${lastWeek}&to=${this.time}&pageSize=90&apiKey=${this.key}`
+    ).then(this._checkResponse);
   }
 }
-
 
 const newsApi = new NewsApi({
   baseUrl: "https://nomoreparties.co/news/v2/everything",

@@ -5,6 +5,9 @@ import { useArticles } from "../../contexts/ArticleContext";
 
 const SearchResults = () => {
   const { setToShowMore } = useArticles();
+  const addMore = () => {
+    setToShowMore((prev) => (prev += 3))
+  }
 
   return (
     <div className="search-results">
@@ -12,7 +15,7 @@ const SearchResults = () => {
       <NewsCardList />
       <button
         className="search-results__button"
-        onClick={() => setToShowMore((prev) => (prev += 3))}
+        onClick={addMore}
       >
         Show more
       </button>

@@ -88,7 +88,7 @@
   letter-spacing: 0em;
   text-align: left;
 }
-.modal__button{
+.modal__button {
   border-radius: 2px;
   padding: 0;
   width: 80%;
@@ -101,11 +101,11 @@
 
 .modal__button_active {
   color: white;
-  background-color: #2F71E5;
+  background-color: #2f71e5;
 }
 
-.modal__button_disabled{
-  background-color:#b6bcbf;
+.modal__button_disabled {
+  background-color: #b6bcbf;
   cursor: pointer;
 }
 
@@ -130,7 +130,6 @@
 .modal__redirect {
   align-self: center;
 }
-
 
 .modal__redirect-button {
   background-color: transparent;

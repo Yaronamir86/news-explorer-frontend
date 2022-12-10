@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="app">
       <Switch>
-      <ProtectedRoute path="/saved-news">
+        <ProtectedRoute path="/saved-news">
           <SavedNewsHeader />
         </ProtectedRoute>
         <Route exact path="/">

@@ -11,7 +11,7 @@ class MainApi {
     return Promise.reject(`Error ${res.status}`);
   }
 
-  saveArticle (article, token) {
+  saveArticle(article, token) {
     return fetch(`${this._baseUrl}/articles`, {
       method: "POST",
       headers: {
@@ -20,7 +20,7 @@ class MainApi {
       },
       body: JSON.stringify(article),
     }).then(this._checkResponse);
-  };
+  }
 
   getSavedArticles(token) {
     return fetch(`${this._baseUrl}/articles`, {
@@ -58,7 +58,7 @@ class MainApi {
     }).then(this._checkResponse);
   }
 
-  getUsersInfo (token) {
+  getUsersInfo(token) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "GET",
       headers: {
@@ -67,10 +67,9 @@ class MainApi {
         Authorization: `Bearer ${token}`,
       },
     }).then(this._checkResponse);
-  };
+  }
 }
 const baseUrl = "https://api.yaron-news.students.nomoredomainssbs.ru";
-
 
 const mainApi = new MainApi(baseUrl, {
   "Content-Type": "application/json",

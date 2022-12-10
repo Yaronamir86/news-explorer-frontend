@@ -4,10 +4,8 @@ import "./SearchForm.css";
 import { useArticles } from "../../contexts/ArticleContext";
 
 const SearchForm = () => {
- 
   const [search, setKeyword] = useState("");
   const { getCardsByKeyWord } = useArticles();
- 
 
   function handleChange(e) {
     const { value } = e.target;
@@ -17,7 +15,6 @@ const SearchForm = () => {
   function handleSubmit(e) {
     e.preventDefault();
     getCardsByKeyWord(search);
-    
   }
 
   return (

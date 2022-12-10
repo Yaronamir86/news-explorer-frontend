@@ -6,7 +6,7 @@ import { useModal } from "../../contexts/ModalContext";
 import { NavLink } from "react-router-dom";
 import { useLoggedIn } from "../../contexts/LoggedInContext";
 import { useHomePage } from "../../contexts/HomePageContext";
-import { useUser } from "../../contexts/UserContext"
+import { useUser } from "../../contexts/UserContext";
 
 const MobileMenu = () => {
   const { isHome } = useHomePage();
@@ -30,7 +30,7 @@ const MobileMenu = () => {
     }
 
     function handleClickToClose(evt) {
-      if (evt.target.classList.contains('mobile_opened')) {
+      if (evt.target.classList.contains("mobile_opened")) {
         closeModal();
       }
     }

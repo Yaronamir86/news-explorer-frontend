@@ -16,11 +16,11 @@ const Header = (getSearch, search, onChangeHandler) => {
           account.
         </p>
       </div>
-      <SearchForm 
-      getSearch={getSearch}
-       search={search}
-       onChangeHandler={onChangeHandler}
-       />
+      <SearchForm
+        getSearch={getSearch}
+        search={search}
+        onChangeHandler={onChangeHandler}
+      />
     </div>
   );
 };

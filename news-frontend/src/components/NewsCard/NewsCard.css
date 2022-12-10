@@ -6,7 +6,6 @@
   min-height: 576px;
   position: relative;
   width: 100%;
-
 }
 
 .news-card__image-container {
@@ -227,7 +226,6 @@
 
   .news-card__text {
     text-overflow: hidden;
-    
   }
   .news-card__keywords {
     top: 8px;
@@ -241,7 +239,7 @@
   }
 }
 
-@media screen and  (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .news-card {
     min-height: 440px;
     max-width: 100%;

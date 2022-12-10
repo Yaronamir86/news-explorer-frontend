@@ -3,28 +3,24 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import { useModal } from "../../contexts/ModalContext";
 import { useLoggedIn } from "../../contexts/LoggedInContext";
 import "../../blocks/Form.css";
-import  mainApi from "../../utils/MainApi";
 import { useValidateForm } from "../../hooks/useForm";
 
 const RegisterPopup = () => {
   const modalContext = useModal();
-  const {handleRegister} = useLoggedIn()
+  const { handleRegister, loggedInError } = useLoggedIn();
   const { values, handleChange, errors, isValid, resetForm } =
     useValidateForm();
- 
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    handleRegister(values);
-    resetForm();
-    modalContext.closeModal(RegisterPopup);
-    const res =  mainApi.register(values);
-    if (!res.message) {
-        modalContext.openModal('infoToolTip');
-        return;
-    }
-    console.log("registerd");
-  }
+    function handleSubmit(e) {
+      e.preventDefault();
+      handleRegister(values);
+      modalContext.closeModal();
+      modalContext.openModal('infoToolTip');
+      console.log("registerd");
+      resetForm(values)
+      }
+      
+    
 
   return (
     <PopupWithForm
@@ -32,7 +28,7 @@ const RegisterPopup = () => {
       name="signup"
       buttonText="sign up"
       or="or "
-      redirect= "sign in"
+      redirect="sign in"
       isOpen={modalContext.modalState.signup}
       onSubmit={handleSubmit}
       isValid={isValid}
@@ -48,11 +44,13 @@ const RegisterPopup = () => {
           minLength="2"
           maxLength="40"
           autoComplete="true"
-          value={values.email || ''}
+          value={values.email || ""}
           onChange={handleChange}
           required
         />
-        <span className="form__input-error email-input-error">{errors.email}</span>
+        <span className="form__input-error email-input-error">
+          {errors.email}
+        </span>
         <h3 className="form__input-title">Password</h3>
         <input
           id="password-input"
@@ -62,12 +60,14 @@ const RegisterPopup = () => {
           className="form__input"
           minLength="2"
           maxLength="200"
-          value={values.password || ''}
+          value={values.password || ""}
           autoComplete="false"
           onChange={handleChange}
           required
         />
-        <span className="form__input-error password-input-error">{errors.password}</span>
+        <span className="form__input-error password-input-error">
+          {errors.password}
+        </span>
         <h3 className="form__input-title">Username</h3>
         <input
           id="userName-input"
@@ -78,12 +78,14 @@ const RegisterPopup = () => {
           minLength="2"
           maxLength="40"
           autoComplete="true"
-          value={values.name || ''}
+          value={values.name || ""}
           onChange={handleChange}
           required
         />
-        <span className="form__input-error name-input-error">{errors.name}</span>
-        <span className="form__input-error form__input-error_type-general"></span>
+        <span className="form__input-error name-input-error">
+          {errors.name}
+        </span>
+        <span className="form__input-error form__input-error_type-general">{loggedInError}</span>
       </fieldset>
     </PopupWithForm>
   );

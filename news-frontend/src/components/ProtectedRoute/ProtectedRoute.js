@@ -1,6 +1,6 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { useLoggedIn } from '../../contexts/LoggedInContext';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { useLoggedIn } from "../../contexts/LoggedInContext";
 
 const ProtectedRoute = ({ children, path }) => {
   const { isLoggedIn } = useLoggedIn();

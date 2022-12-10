@@ -2,14 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import "./PopupWithForm.css";
 import { useModal } from "../../contexts/ModalContext";
-import { useValidateForm } from "../../hooks/useForm";
 
 const PopupWithForm = (props) => {
   const modalContext = useModal();
 
-  // eslint-disable-next-line
-  const { isValid } = useValidateForm();
-  
+
   useEffect(() => {
     const isOpen = props.isOpen;
     if (!isOpen) return;
@@ -56,15 +53,17 @@ const PopupWithForm = (props) => {
         >
           <h2 className="form__title">{props.title}</h2>
           {props.children}
-         <button
-            className={`${ props.isValid ? "modal__button modal__button_active" : "modal__button modal__button_disabled" }`}
+          <button
+            className={`${
+              props.isValid
+                ? "modal__button modal__button_active"
+                : "modal__button modal__button_disabled"
+            }`}
             type="submit"
-        
-            onClick={props.submit}
           >
             {props.buttonText}
           </button>
-          <p className= "modal__redirect">
+          <p className="modal__redirect">
             {props.or}
             <button
               className="modal__redirect-button"

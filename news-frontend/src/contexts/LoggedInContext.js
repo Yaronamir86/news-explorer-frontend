@@ -1,7 +1,7 @@
 import { useContext, useState, createContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import mainApi from "../utils/MainApi";
-import { useUser } from "./UserContext"
+import { useUser } from "./UserContext";
 
 const LoggedInContext = createContext();
 
@@ -10,66 +10,63 @@ const LoggedInContextProvider = ({ children }) => {
   const [savedCards, setSavedCards] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [values, setValues] = useState({});
-  const [loggedInError, setLoggedInError] = useState('');
+  const [loggedInError, setLoggedInError] = useState("");
   const { setCurrentUser } = useUser();
   const history = useHistory();
 
   ////////////////////////INITIAL-USE-EFFECT/////////////////////
 
-
   useEffect(() => {
     const checkToken = () => {
-    const token = localStorage.getItem("jwt");
-    if (token) {
-      mainApi
-        .getUsersInfo(token)
-        .then((res) => {
-          if (res._id) {
-            setIsLoggedIn(true);
-            setCurrentUser(res);
-            history.push("/");
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  };
-  checkToken();
-  },[ history, token, setCurrentUser ]);
-  
+      const token = localStorage.getItem("jwt");
+      if (token) {
+        mainApi
+          .getUsersInfo(token)
+          .then((res) => {
+            if (res._id) {
+              setIsLoggedIn(true);
+              setCurrentUser(res);
+              history.push("/");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    };
+    checkToken();
+  }, [history, token, setCurrentUser]);
 
   //////////////////////////////REGISTER-HANDLINGS////////////////
 
-  function handleRegister({name, email, password}) {
+  function handleRegister({ name, email, password }) {
     if (!email || !password || !name) {
       return;
     }
-    setLoggedInError('');
+    setLoggedInError("");
     mainApi
-      .register({name, email, password})
+      .register({ name, email, password })
       .then((res) => {
         console.log(res);
+        setLoggedInError("");
       })
+
       .catch((err) => {
-        if (err.code === 409) {
-          setLoggedInError('this user is already registered')
-        }
-        else {
-          setLoggedInError('something went wrong');
+        if (err.status === 409) {
+          setLoggedInError("this user is already registered");
         }
       });
-  };
+  }
 
   //////////////////////////////LOGING-HANDLINGS////////////////
 
-  function handleLogin({email, password}) {
+  function handleLogin({ email, password }) {
     if (!email || !password) {
       return;
     }
-    setLoggedInError('');
+    setLoggedInError("");
     mainApi
-      .login({email, password})
+      .login({ email, password })
       .then((res) => {
         if (res.token) {
           setValues(res);
@@ -82,18 +79,16 @@ const LoggedInContextProvider = ({ children }) => {
         }
       })
       .catch((err) => {
-        setLoggedInError('incorrect email or password')
+        setLoggedInError("incorrect email or password");
       });
-  };
+  }
 
-  
-
-  const handleLogOut = () => {
+  const handleLogOut = (res) => {
     setIsLoggedIn(false);
-    console.log(isLoggedIn)
     setValues({});
     setSavedCards([]);
-    localStorage.removeItem('token');
+    setToken([]);
+    localStorage.removeItem("jwt", "token");
     history.push("/");
   };
 
@@ -122,7 +117,7 @@ const LoggedInContextProvider = ({ children }) => {
 
 export default LoggedInContextProvider;
 
- const useLoggedIn = () => {
+const useLoggedIn = () => {
   const context = useContext(LoggedInContext);
   return context;
 };

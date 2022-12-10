@@ -37,7 +37,8 @@ const SavedNewsHeader = () => {
                 </span>
               );
             })}
-            {keywords.length > 2 && `${" "}and ${" "} ${keywords.length - 2} others`}
+            {keywords.length > 2 &&
+              `${" "}and ${" "} ${keywords.length - 2} others`}
           </strong>
         </p>
       </div>

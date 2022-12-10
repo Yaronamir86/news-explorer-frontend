@@ -22,13 +22,14 @@ const ArticleContextProvider = ({ children }) => {
     if (!isLoggedIn) {
       setIsSaveCards([]);
       return;
-    } 
-    mainApi.getSavedArticles(token)
-    .then((res) => {
-      setIsSaveCards(res);
-    });
+    }
+    mainApi
+      .getSavedArticles(token)
+      .then((res) => {
+        setIsSaveCards(res);
+      })
+      .catch((err) => console.log(err));
   }, [isLoggedIn, token]);
-
 
   /////////////////////////SAVING ARTICLE/////////////////////////////////////
 
@@ -40,19 +41,17 @@ const ArticleContextProvider = ({ children }) => {
         .saveArticle(article, token)
         .then((res) => {
           setIsSaveCards([...isSaveCards, res]);
-          console.log('saved!');
+          console.log("saved!");
         })
         .catch((err) => console.log(err));
     } else {
       handleDeleteCard(savedCard._id);
-      console.log('deleted!');
+      console.log("deleted!");
     }
   };
 
-  const checkIfSave = (article) => 
+  const checkIfSave = (article) =>
     isSaveCards.find((a) => a.link === article.link);
-  
-
 
   ///////////////////ARTICLE-SEARCH-BY-KEYWORD(NEWS-API)/////////////////////////////
   const getCardsByKeyWord = (query) => {
@@ -62,7 +61,6 @@ const ArticleContextProvider = ({ children }) => {
       .then((res) => {
         if (res.articles.length > 0) {
           setCards(res.articles);
-          console.log(res.articles);
           setKeyword(query);
         } else {
           handleNotFound();
@@ -86,9 +84,8 @@ const ArticleContextProvider = ({ children }) => {
         );
         setIsSaveCards(newIsSaveCard);
       })
-      .catch((err) => console.log(err));   
-};
-
+      .catch((err) => console.log(err));
+  };
 
   //////////////////////////DIFFERENT-HANDLERS//////////////////////////
 
@@ -103,8 +100,6 @@ const ArticleContextProvider = ({ children }) => {
     setCards([]);
   };
   const handleRemoveIsLoading = () => setIsLoading(false);
-
- 
 
   return (
     <ArticlesContext.Provider

@@ -5,7 +5,6 @@ import "./InfoToolTip.css";
 
 const InfoToolTip = () => {
   const modalContext = useModal();
- 
 
   return (
     <PopupWithForm

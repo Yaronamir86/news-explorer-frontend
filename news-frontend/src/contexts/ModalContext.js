@@ -1,7 +1,6 @@
 import React from "react";
 import { useContext, useState, createContext } from "react";
 
-
 const ModalContext = createContext();
 
 const ModalProvider = ({ children }) => {
@@ -24,7 +23,7 @@ const ModalProvider = ({ children }) => {
 
   return (
     <ModalContext.Provider
-      value={{ modalState, setModalState, openModal, closeModal}}
+      value={{ modalState, setModalState, openModal, closeModal }}
     >
       {children}
     </ModalContext.Provider>

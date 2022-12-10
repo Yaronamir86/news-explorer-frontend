@@ -51,7 +51,7 @@ const LoginPopup = () => {
           required
         />
         <span className="form__input-error email-input-error">
-         {errors.email}
+          {errors.email}
         </span>
         <h3 className="form__input-title">Password</h3>
         <input
