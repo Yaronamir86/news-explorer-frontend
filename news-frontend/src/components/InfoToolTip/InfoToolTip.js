@@ -11,6 +11,7 @@ const InfoToolTip = () => {
       title="Registration successfully completed!"
       name="infoToolTip"
       redirect="sign in"
+      or=""
       isOpen={modalContext.modalState.infoToolTip}
       onClick={modalContext.modalState.infoToolTip}
     ></PopupWithForm>

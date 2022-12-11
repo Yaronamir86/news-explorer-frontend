@@ -6,7 +6,6 @@
   min-height: 576px;
   position: relative;
   width: 100%;
-
 }
 
 .news-card__image-container {
@@ -28,7 +27,7 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   display: grid;
-  grid-template-rows: 24px minmax(80px, 1fr) minmax(88px, auto) 20px;
+  grid-template-rows: 24px minmax(90px, 1fr) minmax(110px, auto) 20px;
   gap: 12px;
   padding: 20px 24px 24px;
   margin: 0;
@@ -56,6 +55,7 @@
   letter-spacing: 0px;
   text-align: left;
   margin: 0;
+  overflow: hidden;
 }
 
 .news-card__text {
@@ -83,6 +83,8 @@
   overflow: hidden;
   max-width: 100%;
   grid-row: 4/-1;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .news-card__button {
@@ -112,6 +114,9 @@
 }
 
 .news-card__button-save_active {
+  background-image: url("../../images/icon_active.svg");
+}
+.news-card__button-save_active:hover {
   background-image: url("../../images/icon_active.svg");
 }
 
@@ -167,7 +172,7 @@
   .news-card__text-container {
     padding: 16px;
     height: 330px;
-    grid-template-rows: 24px minmax(84px, auto) minmax(128px, auto) 20px;
+    grid-template-rows: 24px minmax(125px, auto) minmax(150px, auto) 20px;
     gap: 10px;
     overflow: ellipsis;
   }
@@ -203,7 +208,7 @@
   .news-card__text-container {
     padding: 16px;
     height: 270px;
-    grid-template-rows: 24px minmax(84px, auto) minmax(88, auto) 20px;
+    grid-template-rows: 24px minmax(96px, auto) minmax(106px, auto) 20px;
     overflow: hidden;
   }
 
@@ -212,6 +217,7 @@
     line-height: 24px;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
 
   .news-card__image-container {
@@ -220,7 +226,6 @@
 
   .news-card__text {
     text-overflow: hidden;
-    
   }
   .news-card__keywords {
     top: 8px;
@@ -234,7 +239,7 @@
   }
 }
 
-@media screen and  (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .news-card {
     min-height: 440px;
     max-width: 100%;
@@ -245,19 +250,22 @@
   .news-card {
     min-height: 440px;
     max-width: 100%;
+    overflow: hidden;
   }
 
   .news-card__text-container {
     min-height: 244px;
-    grid-template-rows: 18px minmax(48px, auto) minmax(120px, auto) 18px;
+    grid-template-rows: 18px minmax(66px, auto) minmax(120px, auto) 18px;
     font-size: 16px;
     line-height: 22px;
     gap: 10px;
+    overflow: hidden;
   }
 
   .news-card__title {
     font-size: 22px;
     line-height: 24px;
+    overflow: hidden;
   }
 
   .news-card__image-container {

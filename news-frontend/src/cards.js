@@ -5,7 +5,7 @@ import Img3  from './images/image_08.png';
 
 export const cards = [
     {
-      id: 1,
+      id: '1',
       image: Img1,
       date: "March 16, 2020",
       title: "Everyone Needs a Special 'Sit Spot' in Nature",
@@ -14,7 +14,7 @@ export const cards = [
       keyword: "Nature",
     },
     {
-      id: 2,
+      id: '2',
       image: Img2,
       date: "November 4, 2020",
       title: "Nature makes you better",
@@ -23,7 +23,7 @@ export const cards = [
       keyword: "Nature",
     },
     {
-      id: 3,
+      id: '3',
       image: Img3,
       date: "February 19, 2019",
       title: "Nostalgic Photos of Tourists in U.S. National Parks",
@@ -32,7 +32,7 @@ export const cards = [
       keyword: "Yellowstone",
     },
     {
-      id: 4,
+      id: '4',
       image: Img2,
       date: "October 19, 2020",
       title: "Grand Teton Renews Historic Crest Trail",
@@ -41,7 +41,7 @@ export const cards = [
       keyword: "Parks",
     },
     {
-      id: 5,
+      id: '5',
       image: Img1,
       date: "November 4, 2020",
       title: "Scientists Don't Know Why Polaris Is So Weird ",
