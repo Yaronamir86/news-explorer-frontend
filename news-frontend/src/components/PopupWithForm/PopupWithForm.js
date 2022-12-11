@@ -6,6 +6,7 @@ import { useModal } from "../../contexts/ModalContext";
 const PopupWithForm = (props) => {
   const modalContext = useModal();
 
+
   useEffect(() => {
     const isOpen = props.isOpen;
     if (!isOpen) return;
@@ -53,14 +54,17 @@ const PopupWithForm = (props) => {
           <h2 className="form__title">{props.title}</h2>
           {props.children}
           <button
-            className="modal__button"
+            className={`${
+              props.isValid
+                ? "modal__button modal__button_active"
+                : "modal__button modal__button_disabled"
+            }`}
             type="submit"
-            onClick={props.submit}
           >
             {props.buttonText}
           </button>
           <p className="modal__redirect">
-            or{" "}
+            {props.or}
             <button
               className="modal__redirect-button"
               type="button"

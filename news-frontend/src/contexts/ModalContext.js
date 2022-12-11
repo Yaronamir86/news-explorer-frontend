@@ -5,8 +5,8 @@ const ModalContext = createContext();
 
 const ModalProvider = ({ children }) => {
   const [modalState, setModalState] = useState({
-    signIn: false,
-    signUp: false,
+    signin: false,
+    signup: false,
     infoToolTip: false,
     mobile: false,
   });

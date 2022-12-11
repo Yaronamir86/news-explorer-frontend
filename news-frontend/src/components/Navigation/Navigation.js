@@ -6,11 +6,13 @@ import { NavLink } from "react-router-dom";
 import { useModal } from "../../contexts/ModalContext";
 import { useLoggedIn } from "../../contexts/LoggedInContext";
 import { useHomePage } from "../../contexts/HomePageContext";
+import { useUser } from "../../contexts/UserContext";
 
 const Navigation = () => {
   const { openModal } = useModal();
   const { isHome } = useHomePage();
-  const { isLoggedIn, user, handleLogOut } = useLoggedIn();
+  const { isLoggedIn, handleLogOut } = useLoggedIn();
+  const { currentUser } = useUser();
 
   const handleNavButtonClick = () => {
     !isLoggedIn ? openModal("signin") : handleLogOut();
@@ -70,7 +72,7 @@ const Navigation = () => {
               type="button"
             >
               <span className="nav__button-text">
-                {isLoggedIn ? user.firstName : "sign in"}
+                {isLoggedIn ? currentUser.name : "sign in"}
               </span>
               {isLoggedIn && (
                 <span
